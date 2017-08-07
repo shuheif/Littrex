@@ -49,7 +49,7 @@ $cakeDescription = 'Littrex: Learning Manage System';
     </div>
     <footer>
     <p>Bui Thanh Phuong</p>
-    <p>Shuhei Fujita Second</p>
+    <p>Shuhei Fujita</p>
     </footer>
 </body>
 </html>
