@@ -48,8 +48,6 @@ $cakeDescription = 'Littrex: Learning Manage System';
         <?= $this->fetch('content') ?>
     </div>
     <footer>
-    <p>Bui Thanh Phuong</p>
-    <p>Shuhei Fujita Second</p>
     </footer>
 </body>
 </html>

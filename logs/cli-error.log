@@ -1,0 +1,12 @@
+2017-07-14 19:53:39 Error: [Cake\Console\Exception\MissingShellException] Shell class for "All" could not be found.
+Exception Attributes: array (
+  'class' => 'All',
+)
+Stack Trace:
+#0 /home/users/0/raindrop.jp-shuhei/web/shuhei_dev/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(223): Cake\Console\ShellDispatcher->findShell('all')
+#1 /home/users/0/raindrop.jp-shuhei/web/shuhei_dev/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#2 /home/users/0/raindrop.jp-shuhei/web/shuhei_dev/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#3 /home/users/0/raindrop.jp-shuhei/web/shuhei_dev/bin/cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#4 {main}
+
+
