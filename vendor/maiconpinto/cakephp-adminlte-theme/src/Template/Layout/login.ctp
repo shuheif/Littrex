@@ -27,13 +27,18 @@
 
 <body class="login-page" style="">
 
+  <div class="row">
+    <div class="col-md-6" >
+      <a href="http://littrex.com">
+        <img height=100 width=250 style="margin-left: auto; margin-right: auto;" src="http://littrex.com/img/Littrex_Logo.png"><img>
+      </a>
+    </div>
+  </div>
+
   <div class="login-box" style="font-size: 16px; border-radius: .28571429rem;
     box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;">
     <!-- /.login-logo -->
     <div class="login-box-body">
-      <a class="navbar-brand js-scroll-trigger" href="http://littrex.com">
-        <img height=100 width=250 style="margin-left: auto; margin-right: auto;" src="http://littrex.com/img/Littrex_Logo.png"><img>
-      </a>
       <h3 class="login-box-msg"><?php echo __('Sign in to start learning') ?></h3>
       <p> <?php echo $this->Flash->render(); ?> </p>
       <!-- <p> <?php echo $this->Flash->render('auth'); ?> </p> -->
