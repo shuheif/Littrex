@@ -1,1 +1,0 @@
-Config|a:1:{s:4:"time";i:1502117742;}Auth|a:1:{s:8:"redirect";s:1:"/";}Flash|a:1:{s:4:"auth";a:1:{i:0;a:4:{s:7:"message";s:47:"You are not authorized to access that location.";s:3:"key";s:4:"auth";s:7:"element";s:13:"Flash/default";s:6:"params";a:1:{s:5:"class";s:5:"error";}}}}

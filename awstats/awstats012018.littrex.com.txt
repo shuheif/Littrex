@@ -8,33 +8,33 @@ AWSTATS DATA FILE 7.6 (build 20161204)
 # update).
 BEGIN_MAP 28
 POS_GENERAL 2015                
-POS_TIME 2679                
-POS_VISITOR 9719                
-POS_DAY 11879               
-POS_DOMAIN 3482                
-POS_LOGIN 3933                
-POS_ROBOT 4088                
-POS_WORMS 4835                
-POS_EMAILSENDER 4966                
-POS_EMAILRECEIVER 5109                
-POS_SESSION 12457               
-POS_SIDER 12663               
-POS_FILETYPES 5244                
-POS_DOWNLOADS 5488                
-POS_OS 5536                
-POS_BROWSER 5775                
-POS_SCREENSIZE 6387                
-POS_UNKNOWNREFERER 6461                
-POS_UNKNOWNREFERERBROWSER 6588                
-POS_ORIGIN 6670                
-POS_SEREFERRALS 6808                
-POS_PAGEREFS 7006                
-POS_SEARCHWORDS 7181                
-POS_KEYWORDS 7333                
-POS_MISC 2342                
-POS_ERRORS 7392                
-POS_CLUSTER 3789                
-POS_SIDER_404 7506                
+POS_TIME 2692                
+POS_VISITOR 9794                
+POS_DAY 11996               
+POS_DOMAIN 3496                
+POS_LOGIN 3947                
+POS_ROBOT 4102                
+POS_WORMS 4849                
+POS_EMAILSENDER 4980                
+POS_EMAILRECEIVER 5123                
+POS_SESSION 12599               
+POS_SIDER 12805               
+POS_FILETYPES 5258                
+POS_DOWNLOADS 5503                
+POS_OS 5551                
+POS_BROWSER 5790                
+POS_SCREENSIZE 6402                
+POS_UNKNOWNREFERER 6476                
+POS_UNKNOWNREFERERBROWSER 6603                
+POS_ORIGIN 6685                
+POS_SEREFERRALS 6823                
+POS_PAGEREFS 7021                
+POS_SEARCHWORDS 7196                
+POS_KEYWORDS 7348                
+POS_MISC 2355                
+POS_ERRORS 7407                
+POS_CLUSTER 3803                
+POS_SIDER_404 7521                
 END_MAP
 
 # LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
@@ -46,14 +46,14 @@ END_MAP
 # MonthHostsKnown   = Number of hosts known
 # MonthHostsUnKnown = Number of hosts unknown
 BEGIN_GENERAL 8
-LastLine 20180126024054 45 8872 0
+LastLine 20180126234826 54 13187 6885619469366
 FirstTime 20180101001410
-LastTime 20180125100508
-LastUpdate 20180126080010 0 0 0 0 0
-TotalVisits 75                  
-TotalUnique 50                  
+LastTime 20180126131345
+LastUpdate 20180127020019 3 0 3 0 0
+TotalVisits 78                  
+TotalUnique 51                  
 MonthHostsKnown 0                   
-MonthHostsUnknown 52                  
+MonthHostsUnknown 53                  
 END_GENERAL
 
 # Misc ID - Pages - Hits - Bandwidth
@@ -63,7 +63,7 @@ JavaEnabled 0 0 0
 JavascriptDisabled 0 0 0
 PDFSupport 0 0 0
 WindowsMediaPlayerSupport 0 0 0
-AddToFavourites 0 56 0
+AddToFavourites 0 62 0
 RealPlayerSupport 0 0 0
 TotalMisc 0 0 0
 DirectorSupport 0 0 0
@@ -81,12 +81,12 @@ BEGIN_TIME 24
 6 16 43 2749631 9 13 105112
 7 4 4 36957 12 12 22210
 8 9 20 905269 10 16 19946
-9 19 42 4292200 14 46 2989123
+9 28 73 5535020 16 52 3176432
 10 7 31 1385589 162 193 3128892
 11 25 25 222464 76 80 387443
 12 7 31 2986246 7 13 274846
-13 6 9 304692 11 15 187359
-14 52 177 15008984 53 75 577552
+13 9 16 462013 12 17 234589
+14 52 181 15429692 53 76 702112
 15 6 6 26455 10 12 31986
 16 4 16 884571 10 15 235001
 17 2 2 8557 12 14 114677
@@ -95,13 +95,13 @@ BEGIN_TIME 24
 20 1 4 300584 9 12 166786
 21 20 38 1377864 16 28 73134
 22 15 34 4162731 13 16 280228
-23 53 129 5191466 17 29 547799
+23 53 129 5191466 18 32 595025
 END_TIME
 
 # Domain - Pages - Hits - Bandwidth
 # The 10 first Pages must be first (order not required for others)
 BEGIN_DOMAIN 16
-us 153 416 26085267
+us 165 458 27906116
 vn 126 285 15535442
 mu 71 201 8831269
 nl 9 25 1154373
@@ -135,13 +135,13 @@ Googlebot/ 190 4754013 20180124180922 0
 Uptimebot/ 30 264736 20180123174551 0
 YandexBot/ 27 127017 20180126024054 0
 ^Mozilla$ 25 218054 20180119115444 0
-facebookexternalhit/ 23 3446685 20180120141242 0
+facebookexternalhit/ 24 3571245 20180126140545 0
 MJ12bot/ 20 177107 20180125111152 0
 ips\-agent 10 146160 20180117141600 0
 bingpreview 9 587209 20180112094257 0
 bingbot/ 9 302706 20180124213133 0
+Googlebot\-Image/ 5 142900 20180126234825 0
 no_user_agent 5 60921 20180123160054 0
-Googlebot\-Image/ 4 142900 20180116203711 0
 Wget/ 1 14200 20180115212403 0
 MSIE[\x20]6 1 14200 20180118210644 0
 SurveyBot/ 2 18636 20180125174710 0
@@ -166,15 +166,15 @@ END_EMAILRECEIVER
 
 # Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
 BEGIN_FILETYPES 9
-css 174 9742724 0 0
-png 105 23739459 0 0
-woff2 21 378588 0 0
+css 184 10440196 0 0
+png 111 24128128 0 0
+woff2 23 414644 0 0
 json 1 949 0 0
-html 105 2297761 0 0
-js 177 8379498 0 0
-jpg 131 8330493 0 0
+html 113 2311961 0 0
+jpg 136 8638962 0 0
+js 186 8747239 0 0
 jpeg 42 2000133 0 0
-Unknown 265 2373408 0 0
+Unknown 267 2381650 0 0
 END_FILETYPES
 
 # Downloads - Hits - Bandwidth
@@ -184,17 +184,17 @@ END_DOWNLOADS
 # OS ID - Hits
 BEGIN_OS ID - Hits - Pages 13
 linuxandroid 51 30
-winlong 1 1
-winxp 5 5
 macosx11 1 1
+winxp 5 5
+winlong 1 1
 ios_iphone 25 9
 macosx12 69 42
 linux 89 29
 win7 104 36
-macosx 632 231
-macosx10 27 3
-Unknown 1 1
+macosx 662 239
+macosx10 39 7
 win10 15 3
+Unknown 1 1
 macosx8 1 1
 END_OS
 
@@ -204,27 +204,27 @@ firefox57.0 1 1
 safari11.0 25 9
 chrome63.0.3239.111 37 22
 chrome34.0.1847.114 14 8
-chrome63.0.3239.132 609 214
+chrome63.0.3239.132 635 222
 chrome56.0.2924.87 10 2
-safari11.0.2 19 3
+safari11.0.2 23 3
 chrome58.0.3029.110 25 25
-chrome63.0.3239.84 193 61
+chrome63.0.3239.84 205 65
 chrome46.0.2490.80 1 1
 msie8.0 2 2
 chrome61.0.3163.100 10 10
 chrome54.0.2840.71 1 1
 chrome63.0.3239.108 38 14
 chrome36.0.1985.143 1 1
-chrome45.0.2454.101 1 1
 chrome26.0.1410.65 1 1
-chrome34.0.1847.116 1 1
+chrome45.0.2454.101 1 1
 msie10.0 1 1
+chrome34.0.1847.116 1 1
 chrome10.0.648.204 3 3
-chrome56.0.2924.76 20 4
 chrome35.0.2309.372 3 3
+chrome56.0.2924.76 20 4
 msie9.0 2 1
-firefox27.0 1 1
 chrome40.0.2214.93 1 1
+firefox27.0 1 1
 firefox35.0 1 1
 END_BROWSER
 
@@ -243,11 +243,11 @@ END_UNKNOWNREFERERBROWSER
 
 # Origin - Pages - Hits 
 BEGIN_ORIGIN 6
-From0 155 169
+From0 165 183
 From1 0 0
 From2 6 6
 From3 1 1
-From4 230 845
+From4 232 873
 From5 0 0
 END_ORIGIN
 
@@ -278,19 +278,19 @@ END_KEYWORDS
 BEGIN_ERRORS 3
 403 13 37219
 302 204 0
-404 156 124511
+404 160 127672
 END_ERRORS
 
 # URL with 404 errors - Hits - Last URL referrer
-BEGIN_SIDER_404 50
-/courses/syllabus/SYLLABUS%20EXAMPLE%20(CLASSROOM%20COURSE)_files/hcc-but.gif 1 http://littrex.com/courses/syllabus/16
+BEGIN_SIDER_404 52
 /img/portrait/preston.jpg 1 -
-/ 26 -
+/courses/syllabus/SYLLABUS%20EXAMPLE%20(CLASSROOM%20COURSE)_files/hcc-but.gif 1 http://littrex.com/courses/syllabus/16
 /admin_l_t_e/plugins/icheck/icheck.min.js 1 -
-/robots.txt 60 -
+/ 26 -
+/robots.txt 61 -
 /img/screenshots/courseGrades.jpg 1 http://littrex.com/pages/what_is_littrex
-/apple-touch-icon.png 1 -
 /sftp-config.json 2 -
+/apple-touch-icon.png 1 -
 /clubs/view/26 1 -
 /dede/login.php 2 -
 /courses/syllabus/SYLLABUS%20EXAMPLE%20(CLASSROOM%20COURSE)_files/gui-but.gif 1 http://littrex.com/courses/syllabus/16
@@ -300,46 +300,48 @@ BEGIN_SIDER_404 50
 /libraries/sfn.php 1 -
 /sites/all/modules/uploadify/uploadify/uploadify.css 2 -
 /joomla/robots.txt 1 -
-/clubs/view/11 1 -
-/clubs/view/17 1 -
 /clubs/view/9 1 -
+/clubs/view/17 1 -
+/clubs/view/11 1 -
 /courses/syllabus/SYLLABUS%20EXAMPLE%20(CLASSROOM%20COURSE)_files/tips-but.gif 1 http://littrex.com/courses/syllabus/16
 /clubs/view/22 1 -
-/clubs/view/23 1 -
+/huhoi 1 -
 /plugins/community/uploadify/uploadify.css 2 -
+/clubs/view/23 1 -
 /pages/dashboard 1 http://littrex.com/users/login
 /img/Littrex-Logo.png 2 -
-/clubs/view/25 1 -
-/includes/uploadify/uploadify.css 2 -
 /blog/administrator/index.php 1 -
+/includes/uploadify/uploadify.css 2 -
+/clubs/view/25 1 -
 /img/screenshots/myCourses.jpg 1 http://littrex.com/pages/what_is_littrex
-/clubs/view/29 1 -
 /apple-touch-icon-precomposed.png 1 -
+/clubs/view/29 1 -
 /blog/robots.txt 1 -
 /admin/include/uploadify/uploadify.css 2 -
-/administrator/index.php 1 -
 /img/screenshots/courseView.jpg 1 http://littrex.com/pages/what_is_littrex
+/administrator/index.php 1 -
 /far.php 2 -
-/admin_l_t_e/plugins/jquery/jquery-2.1.4.min.js 1 -
 /courses/syllabus/SYLLABUS%20EXAMPLE%20(CLASSROOM%20COURSE)_files/fac-but.gif 1 http://littrex.com/courses/syllabus/16
+/admin_l_t_e/plugins/jquery/jquery-2.1.4.min.js 1 -
 /assets/modules/evogallery/js/uploadify/uploadify.css 2 -
 /img/littrex-logo.png 5 -
 /wp-content/plugins/form-lightbox/readme.txt 2 -
 /rep.php 2 -
-/home 3 -
+/home 4 -
 /index.php 2 -
-/joomla/administrator/index.php 1 -
 /uploadify/uploadify.css 2 -
+/joomla/administrator/index.php 1 -
 /.vscode/ftp-sync.json 1 -
 /public/img/littrex-logo.png 2 -
 /replace.php 2 -
+/pages/about_us 1 http://littrex.com/users/login
 END_SIDER_404
 
 # Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
 # [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
 # The 10 first Hits must be first (order not required for others)
-BEGIN_VISITOR 52
-144.89.204.45 102 308 23045649 20180120122439
+BEGIN_VISITOR 53
+144.89.204.45 107 327 23722215 20180126092324
 58.187.172.154 89 167 7791320 20180114042654
 104.192.74.20 25 25 222464 20180119115444
 197.227.169.142 18 44 2263250 20180118031622
@@ -351,50 +353,51 @@ BEGIN_VISITOR 52
 13.56.229.65 9 9 67326 20180125011604
 66.249.93.222 6 13 1077468 20180114020729
 52.27.2.86 1 1 14200 20180115182651
-144.89.205.75 1 13 500296 20180125100508
+144.89.205.75 5 25 1066550 20180126093416
 52.71.64.37 1 1 4436 20180113074457
 149.62.150.64 4 20 1128538 20180108143734
-94.130.228.163 1 1 4121 20180101072115
 66.249.93.220 1 6 1043066 20180113224053
+94.130.228.163 1 1 4121 20180101072115
 205.143.237.13 2 14 514496 20180121195013
-124.206.180.188 1 1 4121 20180110171930
 14.163.34.36 1 1 4436 20180107171235
-171.25.193.235 1 1 14200 20180115182417
+124.206.180.188 1 1 4121 20180110171930
 84.241.216.67 7 15 587804 20180103212855
+171.25.193.235 1 1 14200 20180115182417
 80.61.148.114 2 10 566569 20180113182833
-66.249.93.221 0 3 381028 
 42.114.18.76 1 13 500296 20180118183856
+66.249.93.221 0 3 381028 
 40.77.167.39 0 1 67546 
-195.22.127.235 1 1 4436 20180110203424
 34.240.81.51 3 3 13833 20180102224447
-34.231.193.33 2 10 564269 20180108143343
+195.22.127.235 1 1 4436 20180110203424
 54.219.142.250 1 1 14200 20180125024631
+34.231.193.33 2 10 564269 20180108143343
 188.226.129.55 1 1 14200 20180124035156
 167.114.228.206 1 1 14200 20180119023732
 197.226.194.42 1 13 500296 20180119050030
-185.174.137.249 1 1 14200 20180125015301
 144.89.235.234 1 13 500296 20180123044100
+185.174.137.249 1 1 14200 20180125015301
 208.94.228.95 1 1 4436 20180112123223
 209.99.137.180 1 1 4436 20180104101551
 41.136.19.133 6 24 975622 20180125011125
 41.136.18.144 1 13 500296 20180121182638
-58.187.173.77 6 29 1334979 20180115144724
 144.89.234.89 1 13 500296 20180123232728
-209.99.133.44 1 1 14200 20180121072558
-197.226.193.184 2 14 514496 20180118025635
+58.187.173.77 6 29 1334979 20180115144724
 50.116.16.218 1 1 14200 20180115222136
+197.226.193.184 2 14 514496 20180118025635
+209.99.133.44 1 1 14200 20180121072558
+144.89.235.83 3 11 578029 20180126131345
 121.147.42.186 8 14 552584 20180108134223
 197.227.78.105 3 10 535110 20180101001531
 38.80.27.109 1 1 14200 20180115075334
 50.19.154.226 1 1 14200 20180115183514
-109.130.28.170 1 13 500296 20180114044720
 117.212.70.58 3 15 870371 20180105163017
-54.81.15.224 1 1 4121 20180113053511
+109.130.28.170 1 13 500296 20180114044720
 58.187.173.212 3 15 528696 20180117035701
+54.81.15.224 1 1 4121 20180113053511
 END_VISITOR
 
 # Date - Pages - Hits - Bandwidth - Visits
-BEGIN_DAY 22
+BEGIN_DAY 23
 20180101 4 11 539231 2
 20180102 3 3 13833 1
 20180103 8 16 591925 2
@@ -417,26 +420,27 @@ BEGIN_DAY 22
 20180123 2 26 1000592 2
 20180124 1 1 14200 1
 20180125 10 40 1518518 5
+20180126 12 42 1820849 3
 END_DAY
 
 # Session range - Number of visits
 BEGIN_SESSION 7
 1h+ 3
 5mn-15mn 1
-0s-30s 58
-2mn-5mn 3
+15mn-30mn 3
 30s-2mn 6
-15mn-30mn 1
+2mn-5mn 3
+0s-30s 59
 30mn-1h 3
 END_SESSION
 
 # URL - Pages - Bandwidth - Entry - Exit
 # The 10 first Pages must be first (order not required for others)
 BEGIN_SIDER 36
-/users/login 145 622745 38 29
-/ 103 2248661 36 35
+/users/login 147 630987 38 29
+/ 111 2262861 39 36
 /pages/about_us 30 170740 0 4
-/admin_l_t_e/bootstrap/fonts/glyphicons-halflings-regular.woff2 21 378588 1 3
+/admin_l_t_e/bootstrap/fonts/glyphicons-halflings-regular.woff2 23 414644 1 5
 /pages/contact_us 21 79640 0 2
 /pages/what_is_littrex 12 64280 0 2
 /users/students 7 232837 0 0
@@ -444,17 +448,17 @@ BEGIN_SIDER 36
 /pages/mailbox/mailbox 5 157301 0 0
 /Courses/view/16 4 86484 0 0
 /informations/school-info 1 17374 0 0
-/forums/ 2 49100 0 0
-/users/view/35 1 22369 0 0
 /users/teachers 2 46476 0 0
+/users/view/35 1 22369 0 0
+/forums/ 2 49100 0 0
 /forumtopics/view/9 1 20723 0 0
 /courses/syllabus/16 1 51691 0 0
 /forums/view/6 3 55059 0 0
 /users/view/3 1 21272 0 0
 /classevents/events-with-course/16 1 22768 0 0
 /users/view/4 1 24016 0 0
-/informations/government-info 1 17779 0 0
 /clubs/my-clubs/9 1 20819 0 0
+/informations/government-info 1 17779 0 0
 /courses 2 69110 0 0
 /courses/view/16 4 86484 0 0
 /full-calendar 1 16999 0 0
@@ -464,8 +468,8 @@ BEGIN_SIDER 36
 /clubs 1 24182 0 0
 /notifications 1 16315 0 0
 /events/feed.json 1 949 0 0
-/grades/course-grades/16 1 25094 0 0
 /clubs/my-clubs/3 1 17175 0 0
+/grades/course-grades/16 1 25094 0 0
 /users 1 28464 0 0
 /pages/mailbox/read-mail 2 50982 0 0
 /users/view/17 3 72147 0 0
