@@ -28,9 +28,9 @@
 <body class="login-page" style="">
 
   <div class="row">
-    <div class="col-md-6" style="margin-left: auto; margin-right: auto;">
+    <div class="col-md-6" >
       <a class="navbar-brand js-scroll-trigger" href="http://littrex.com">
-        <img height=100 width=250 src="http://littrex.com/img/Littrex_Logo.png"><img>
+        <img height=100 width=250 style="margin-left: auto; margin-right: auto;" src="http://littrex.com/img/Littrex_Logo.png"><img>
       </a>
     </div>
   </div>
