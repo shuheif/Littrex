@@ -27,30 +27,6 @@
 
 <body class="login-page" style="">
 
-  <nav class="navbar navbar-inverse navbar-static-top" style="height: 75px; font-size: 16px;">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="http://littrex.com"><img height=50px src="http://littrex.com/img/Littrex_Logo.png">
-        </a>
-      </div>
-      <div id="navbar3" class="navbar-collapse collapse" style="margin-top: 10px;">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="menu-item"><a href="http://littrex.com">Home</a></li>
-          <li class="menu-item"><a href="http://littrex.com/pages/about_us">About Us</a></li>
-          <li class="menu-item"><a href="http://littrex.com/pages/contact_us">Contact Us</a></li>
-        </ul>
-      </div>
-      <!--/.nav-collapse -->
-    </div>
-    <!--/.container-fluid -->
-  </nav>
-
   <div class="login-box" style="font-size: 16px; border-radius: .28571429rem;
     box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;">
     <!-- /.login-logo -->
