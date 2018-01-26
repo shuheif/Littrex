@@ -28,9 +28,11 @@
 <body class="login-page" style="">
 
   <div class="row">
-    <a class="navbar-brand js-scroll-trigger" href="http://littrex.com">
-      <img height=100 width=250 src="http://littrex.com/img/Littrex_Logo.png"><img>
-    </a>
+    <div class="col-md-6" style="margin-left: auto; margin-right: auto;">
+      <a class="navbar-brand js-scroll-trigger" href="http://littrex.com">
+        <img height=100 width=250 src="http://littrex.com/img/Littrex_Logo.png"><img>
+      </a>
+    </div>
   </div>
 
   <div class="login-box" style="font-size: 16px; border-radius: .28571429rem;
