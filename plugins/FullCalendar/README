@@ -1,0 +1,79 @@
+-----------------------------------------
+WHAT IS THE CAKEPHP FULL CALENDAR PLUGIN?
+-----------------------------------------
+
+The CakePHP Full Calendar Plugin allows you to easily integrate
+the jQuery based Full Calendar application with your CakePHP 
+application for a slick ajax event calendar.
+
+The plugin brings the following MIT licensed software (see
+LICENCE) together to create a simple and sleek experience:
+
+-CakePHP (http://cakephp.org)
+ Required by this plugin
+
+-Full Calendar (http://arshaw.com/fullcalendar)
+ The jQuery based Calendar
+
+-jQuery (http://jquery.com)
+ Required by Full Calendar
+
+-jQuery UI (http://jqueryui.com)
+ Required for draggable and resizable events
+
+-qTip (http://craigsworks.com/projects/qtip)
+ A jQuery plugin for hover details
+
+
+----
+WHY?
+----
+
+While working on another project I needed a visual calendar for
+event management for multiple users/accounts. From that project
+I decided to simplify the calendar and turn it into a plugin
+because there didn't appear to be a clean (easy to install and
+use) CakePHP Calendar plugin out there.
+
+In it's current form this plugin is for a single user though I
+plan on creating a few associated plugins to allow for multiple
+users, etc.
+
+
+------------------------
+THE INSTALLATION PROCESS
+------------------------
+
+NOTE: These instructions assume you already have a working copy
+of CakePHP with a database connection on your web server.
+
+You can read up on CakePHP installation and DB config here:
+http://book.cakephp.org/3.0/en/installation.html#installation AND
+http://book.cakephp.org/3.0/en/orm/database-basics.html#database-configuration
+
+
+INSTALLED IN 6 SIMPLE STEPS
+
+1. download the full calendar zip https://github.com/curtisblack2004/CakePHP-Full-Calendar-Plugin/archive/3.x.zip
+
+2. unzip contents to <your-cakephp3.x-app>/plugins/FullCalendar
+
+3. use the sql file under plugins/FullCalendar/config to generate tables in your database
+
+4. edit <your-cakephp3.x-app>/config/bootstrap.php and add:
+
+	Plugin::load('FullCalendar', ['autoload' => true, 'bootstrap' => false, 'routes' => true]);
+
+	to the end of the file.
+
+5. You may need to alter the routes.php file in plugins/config/routes.php
+
+6. You will also want to fix my code if you want to drag and drop the events and have the new time be saved correctly.
+
+THAT'S IT!
+
+You should now be able to access the Full Calendar Plugin at:
+http://yoursite.com/full-calendar
+
+You should add some Event Types first. Then you can start
+scheduling some Events!

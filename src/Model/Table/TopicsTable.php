@@ -47,11 +47,22 @@ class TopicsTable extends Table
             'targetForeignKey' => 'assignment_id',
             'joinTable' => 'assignments_topics'
         ]);
+        $this->belongsToMany('AssignmentsTopics', [
+            'foreignKey' => 'topic_id',
+            'targetForeignKey' => 'assignment_id',
+            'joinTable' => 'assignments_topics'
+        ]);
+
         $this->belongsToMany('Attachments', [
             'foreignKey' => 'topic_id',
             'targetForeignKey' => 'attachment_id',
             'joinTable' => 'attachments_topics'
         ]);
+        
+        $this->hasMany('AssignmentsTopics', [
+            'foreignKey' => 'topic_id'
+        ]);
+
     }
 
     /**

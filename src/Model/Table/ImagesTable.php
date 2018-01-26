@@ -43,6 +43,10 @@ class ImagesTable extends Table
         $this->hasMany('Users', [
             'foreignKey' => 'image_id'
         ]);
+        $this->hasMany('Courses', [
+            'foreignKey' => 'image_id'
+        ]);
+
     }
 
     /**

@@ -57,6 +57,10 @@ class UsersTable extends Table
         $this->hasMany('Informations', [
             'foreignKey' => 'user_id'
         ]);
+        $this->hasMany('Evaluations', [
+            'foreignKey' => 'teacher_id'
+        ]);
+
         $this->belongsToMany('Clubs', [
             'foreignKey' => 'user_id',
             'targetForeignKey' => 'club_id',
@@ -67,6 +71,13 @@ class UsersTable extends Table
             'targetForeignKey' => 'course_id',
             'joinTable' => 'courses_users'
         ]);
+        $this->hasMany('UsersUsers', [
+            'foreignKey' => 'child_id'
+        ]);
+        $this->hasMany('UsersUsers', [
+            'foreignKey' => 'student_id'
+        ]);
+
     }
 
     /**
@@ -162,7 +173,7 @@ class UsersTable extends Table
     
     public function findWithCourse(Query $query, array $options)
     {
-        $query = $this->find();
+        $query = $this->find()->contain('Images');
         $query->matching('Courses', function ($q) use ($options) {
             return $q->where(['Courses.id' => $options['course_id']]);
         });
@@ -171,7 +182,7 @@ class UsersTable extends Table
     
     public function findWithClub(Query $query, array $options)
     {
-        $query = $this->find();
+        $query = $this->find()->contain('Images');
         $query->matching('Clubs', function ($q) use ($options) {
             return $q->where(['Clubs.id' => $options['club_id']]);
         });
@@ -187,8 +198,22 @@ class UsersTable extends Table
 
     public function findStudents(Query $query, array $options)
     {
-        $query = $this->find()->where(['role' => 3]);
+        $query = $this->find()->where(['role' => 3])->contain('Images');
         return $query;
     }
 
+    public function findStaffs(Query $query, array $options)
+    {
+        $query = $this->find()->where(['role' => 1]);
+        return $query;
+    }
+
+    public function findChildren(Query $query, array $options)
+    {
+        $query = $this->find();
+        $query->matching('UsersUsers', function ($q) use ($options) {
+            return $q->where(['UsersUsers.parent_id' => $options['user_id']]);
+        });
+        return $query;
+    }
 }

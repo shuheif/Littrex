@@ -3,44 +3,87 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Assignment'), ['action' => 'add', $course_id]) ?></li>
-        <li><?= $this->Html->link(__('View Course'), ['controller' => 'Courses', 'action' => 'view', $course_id]) ?></li>
-    </ul>
-</nav>
-<div class="assignments index large-9 medium-8 columns content">
-    <h3><?= __('Assignments') ?></h3>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
-            <tr>
-                <th scope="col"><?= $this->Paginator->sort('due_date') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('description') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($assignments as $assignment): ?>
-            <tr>
-                <td><?= h($assignment->due_date) ?></td>
-                <td><?= h($assignment->description) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $assignment->id]) ?>
-                    <?= $this->Html->link(__('Submit'), ['controller' => 'Submissions', 'action' => 'add', $assignment->id]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
-    </div>
-</div>
+<section style="padding-top: 15px;">
+  <nav class="navbar navbar-default">
+          <h3 style="margin: 20px 0px 0px 25px">Assignments List - 
+          <?php
+                $title = h($course->department) . $this->Number->format($course->number) . " " . ($course->title);
+                echo $title;
+          ?></h3>
+        <div class="container-fluid action-bar" style="padding-left: 11px; padding-top:-5px;">
+            <ul class="nav navbar-nav action-bar">
+            <li><?= $this->Html->link(h($course->department . $course->number . ' ' . $course->title), ['controller' => 'Courses', 'action' => 'view', $course->id], ['class' => 'action-bar-before']) ?></li>
+            <?php if ($auth->user('id') == $course->teacher_id): ?>
+            <li><?= $this->Html->link(__('Add assignment'), ['action' => 'add', $course->id], ['class' => 'action-bar-before']) ?></li>
+            <?php endif; ?>
+            </ul>
+        </div><!--/.container-fluid -->
+      </nav>
+</section>
+
+<!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th scope="col"><?= $this->Paginator->sort('due_date') ?></th>
+                    <th scope="col"><?= $this->Paginator->sort('title') ?></th>
+                    <th scope="col"><?= $this->Paginator->sort('description') ?></th>
+                    <th scope="col" class="actions"><?= __('Actions') ?></th>
+                </tr>
+                </thead>
+                    <tbody>
+                    <?php foreach ($assignments as $assignment): ?>
+                    <tr>
+                        <td><?= h($assignment->due_date) ?></td>
+                        <td><?= h($assignment->title) ?></td>
+                        <td><?= h($assignment->description) ?></td>
+                        <td><?= $this->Html->link(__('View'), ['action' => 'view', $assignment->id]) ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+
+<?php
+$this->Html->css([
+    'AdminLTE./plugins/datatables/dataTables.bootstrap',
+  ],
+  ['block' => 'css']);
+
+$this->Html->script([
+  'AdminLTE./plugins/datatables/jquery.dataTables.min',
+  'AdminLTE./plugins/datatables/dataTables.bootstrap.min',
+],
+['block' => 'script']);
+?>
+
+<?php $this->start('scriptBotton'); ?>
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
+<?php $this->end(); ?>

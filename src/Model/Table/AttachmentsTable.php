@@ -69,6 +69,10 @@ class AttachmentsTable extends Table
         $validator
             ->requirePresence('filepath', 'create')
             ->notEmpty('filepath');
+        
+        $validator
+            ->requirePresence('title', 'create')
+            ->notEmpty('title');
 
         return $validator;
     }

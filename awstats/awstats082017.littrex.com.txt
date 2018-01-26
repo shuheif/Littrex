@@ -1,0 +1,675 @@
+AWSTATS DATA FILE 7.6 (build 20161204)
+# If you remove this file, all statistics for date 201708 will be lost/reset.
+# Last config file used to build this data file was /home/littrex/littrex.com/awstats/awstats.littrex.com.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2015                
+POS_TIME 2694                
+POS_VISITOR 7842                
+POS_DAY 9091                
+POS_DOMAIN 3457                
+POS_LOGIN 3783                
+POS_ROBOT 3938                
+POS_WORMS 4253                
+POS_EMAILSENDER 4384                
+POS_EMAILRECEIVER 4527                
+POS_SESSION 9493                
+POS_SIDER 9699                
+POS_FILETYPES 4662                
+POS_DOWNLOADS 4927                
+POS_OS 4975                
+POS_BROWSER 5174                
+POS_SCREENSIZE 5535                
+POS_UNKNOWNREFERER 5609                
+POS_UNKNOWNREFERERBROWSER 5765                
+POS_ORIGIN 5876                
+POS_SEREFERRALS 6013                
+POS_PAGEREFS 6157                
+POS_SEARCHWORDS 6338                
+POS_KEYWORDS 6490                
+POS_MISC 2357                
+POS_ERRORS 6549                
+POS_CLUSTER 3639                
+POS_SIDER_404 6693                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20170901005637 177 48389 12333874690047
+FirstTime 20170819054835
+LastTime 20170831134343
+LastUpdate 20170901020022 3 0 2 0 0
+TotalVisits 58                  
+TotalUnique 28                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 28                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 62 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 28 42 1194946 4 19 227115
+1 0 0 0 0 1 0
+2 21 49 1652946 7 18 649141
+3 23 111 12623801 13 15 30172
+4 10 47 8455222 6 10 60344
+5 30 156 4666486 23 26 501510
+6 269 659 29667305 70 97 22129508
+7 22 75 969892 8 8 0
+8 0 0 0 0 0 0
+9 46 130 5167901 19 26 690950
+10 64 184 7194257 10 18 596747
+11 74 175 17679409 32 33 68018
+12 78 230 6723080 23 31 341357
+13 10 20 408256 5 10 3232
+14 25 74 1450265 39 49 69948
+15 190 470 28191962 74 92 33239
+16 41 116 13347254 18 40 1048297
+17 0 0 0 2 6 15086
+18 1 1 5020 3 5 38818
+19 23 88 6263332 8 10 30172
+20 6 10 137473 4 5 159321
+21 0 0 0 0 4 60344
+22 1 1 4877 1 4 792
+23 79 194 13698513 28 37 1434779
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 7
+us 740 1954 106057578
+mu 208 579 42938227
+jp 74 245 7969069
+in 11 46 2499449
+cn 3 3 14459
+ca 3 3 14148
+fr 2 2 9267
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 5
+python 9 44759 20170831143024 0
+MJ12bot/ 3 42588 20170823185337 0
+facebookexternalhit/ 3 13071 20170829152210 0
+MSIE[\x20]6 1 5020 20170827234641 0
+SurveyBot/ 1 4877 20170823231207 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 10
+css 373 8492765 0 0
+png 267 66762362 0 0
+woff 2 50680 0 0
+woff2 33 378588 0 0
+json 11 11792 0 0
+html 1 24550 0 0
+jpg 457 46046252 0 0
+js 477 12978423 0 0
+jpeg 217 8552059 0 0
+Unknown 994 16204726 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 10
+macosx11 655 260
+winxp 2 2
+ios_iphone 3 3
+macosx5 1 1
+macosx12 1712 590
+linux 2 2
+win7 113 38
+win10 137 52
+win8.1 202 88
+Unknown 5 5
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 16
+chrome23.0.1271.64 1 1
+safari10.1.2 730 192
+firefox55.0 11 2
+safari10.0 3 3
+firefox49.0 1 1
+chrome58.0.3029.110 2 2
+chrome60.0.3112.113 357 141
+chrome52.0.2743.82 11 2
+firefox33.0 1 1
+mozilla 4 4
+chrome60.0.3112.101 1002 413
+chrome60.0.3112.90 701 271
+msie9.0 2 2
+Unknown 4 4
+firefox15.0.1 1 1
+firefox35.0 1 1
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 2
+Magic_Browser 20170824101554
+Mozilla/5.0_Firefox/35.0 20170820090249
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 1
+Magic_Browser 20170824101554
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 75 75
+From1 0 0
+From2 0 0
+From3 2 2
+From4 964 2755
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 0
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 1
+http://www.marinetraffic.com 2 2
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 5
+403 2 0
+302 357 28373
+206 27 18985200
+500 17 2047615
+404 82 6308345
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 18
+/courses/syllabus/SYLLABUS%20EXAMPLE%20(CLASSROOM%20COURSE)_files/hcc-but.gif 11 http://littrex.com/courses/syllabus/16
+/sitemap.xml 1 -
+/apple-touch-icon-precomposed.png 9 -
+/robots.txt 6 -
+/apple-touch-icon.png 9 -
+/asddfdffddfgdfgd 1 -
+/announcements/view/2 1 http://littrex.com/announcements/add/1/2
+/courses/syllabus/SYLLABUS%20EXAMPLE%20(CLASSROOM%20COURSE)_files/gui-but.gif 12 http://littrex.com/courses/syllabus/16
+/courses/syllabus/SYLLABUS%20EXAMPLE%20(CLASSROOM%20COURSE)_files/fac-but.gif 11 http://littrex.com/courses/syllabus/16
+/wp-includes/js/jquery/suggest.js 1 -
+/wp 1 -
+/admin_l_t_e/bootstrap/css/bootstrap.css.map 1 -
+/administrator/ 2 -
+/courses/syllabus/SYLLABUS%20EXAMPLE%20(CLASSROOM%20COURSE)_files/tips-but.gif 12 http://littrex.com/courses/syllabus/16
+/topics/view/4 1 -
+/WORDPRESS 1 -
+/wordpress 1 -
+/blog 1 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 28
+144.89.207.87 204 472 31166166 20170826094930
+144.89.235.61 140 278 15221661 20170831064227
+196.20.253.219 117 293 18274642 20170822161933
+144.89.204.45 76 358 4629525 20170826024141
+60.65.151.69 74 245 7969069 20170821122131
+144.89.232.83 66 184 6444707 20170824062215
+144.89.203.41 65 165 4712437 20170831134343
+197.227.26.8 65 170 10928105 20170823153728
+144.89.85.226 52 137 13703554 20170830113629
+144.89.234.58 40 98 2388435 20170830124316
+144.89.233.24 27 58 1749026 20170831045005
+165.117.232.85 2 11 626829 20170822231736
+117.212.79.73 11 46 2499449 20170820195535
+167.114.55.120 1 1 4877 20170822224003
+198.27.85.233 1 1 4562 20170821200309
+197.226.113.228 15 49 3887527 20170820202744
+163.172.4.153 2 2 9267 20170829204222
+107.170.96.6 1 1 4562 20170820194742
+197.224.181.184 11 67 9847953 20170823040910
+158.69.84.99 1 1 4709 20170831055439
+144.89.205.247 23 54 1680213 20170825103934
+17.255.245.129 6 33 9544906 20170827030102
+52.41.211.72 1 1 4877 20170824101554
+124.206.180.188 1 1 4562 20170820090249
+97.83.183.48 34 101 14166049 20170819154101
+52.34.24.33 3 3 14631 20170824094752
+139.227.144.80 1 1 5020 20170830182428
+139.227.145.35 1 1 4877 20170824150108
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 13
+20170819 103 257 17881619 6
+20170820 51 161 8100694 9
+20170821 133 359 12463701 7
+20170822 120 305 18906348 3
+20170823 82 263 21858562 4
+20170824 13 63 1915179 6
+20170825 191 590 27770575 3
+20170826 15 62 3271066 2
+20170827 6 33 9544906 1
+20170828 16 45 1331624 1
+20170829 99 254 15360681 4
+20170830 139 302 17997602 8
+20170831 73 138 3099640 4
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+1h+ 4
+5mn-15mn 6
+0s-30s 26
+30s-2mn 5
+2mn-5mn 3
+15mn-30mn 6
+30mn-1h 8
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 335
+/users/login 187 889485 55 19
+/courses/my-courses/2 44 1004212 1 2
+/courses/my-courses/9 38 838380 0 5
+/admin_l_t_e/bootstrap/fonts/glyphicons-halflings-regular.woff2 33 378588 0 2
+/Courses/view/15 31 648505 0 1
+/Clubs/view/2 21 708396 0 0
+/users/students 21 661196 0 0
+/courses/view/15 21 431203 0 0
+/grades/course-grades/16 18 448116 0 0
+/Courses/view/16 15 325952 0 0
+/debug_kit/toolbar/dd7f7f4c-b79b-4f2e-a809-952974f2cad1 1 4052 0 0
+/debug_kit/toolbar/9e233d97-0bea-4c9f-abd8-cc0ded3b6a49 1 4051 0 0
+/forumtopics/add/5 3 50919 0 0
+/clubs/members/5 1 18433 0 0
+/grades/course-grades/20 1 21223 0 0
+/debug_kit/panels/view/84d3456f-9cc8-45dd-b750-18cf6271e62d 1 9308 0 0
+/debug_kit/toolbar/1aa7f083-4ce5-4b70-88a1-3c59653ce341 1 4050 0 0
+/clubs/edit-announcements/2 10 752311 0 0
+/debug_kit/toolbar/fcf493e1-7c12-4959-99ce-c8b4c79f4550 1 4049 0 0
+/clubs/view/2 6 151778 0 0
+/debug_kit/toolbar/ed5b4c2b-af0d-4e47-b0a9-a9f949a98772 1 4050 0 0
+/debug_kit/toolbar/0caf878a-0db7-4df8-80e4-0cf9560211cc 1 4051 0 0
+/debug_kit/toolbar/346408a7-7f36-4747-a977-5cfbb289808a 1 4051 0 0
+/debug_kit/toolbar/9126aa4c-5735-472e-a4a4-5c1ddf459522 1 4053 0 0
+/courses/view/16 10 216639 0 0
+/debug_kit/toolbar/07b066aa-4443-4f1f-bda6-4944b83a5186 1 4050 0 0
+/full-calendar 8 134946 0 0
+/debug_kit/toolbar/411fd9ff-e083-4153-9022-d8adbf3a42f4 1 4050 0 0
+/debug_kit/toolbar/0988f596-7017-4702-b3d8-bd3f6cc61893 1 4049 0 0
+/debug_kit/toolbar/4ffe4f0d-1bcc-4062-ad29-671dbc6463a7 1 4043 0 0
+/debug_kit/toolbar/7ab6b1b7-00ff-4b89-8302-53f6e1137b0f 1 4050 0 0
+/debug_kit/toolbar/78fce67b-8eab-4d40-8146-d5eac098d65e 1 4050 0 0
+/debug_kit/toolbar/ebed1f7c-c97f-4545-b8b0-9ccaee9c7649 1 4053 0 0
+/debug_kit/toolbar/da37ffa5-51da-431e-9377-6a40b36565e9 1 4053 0 0
+/assignments/course-assignments/15 3 58139 0 0
+/debug_kit/toolbar/e6cb64c2-9759-4659-a51d-f94e3d4e23af 1 4050 0 0
+/events/feed.json 11 11792 0 0
+/debug_kit/toolbar/bf52f36d-58f6-499a-9805-1e147c0e3fd8 1 4050 0 0
+/debug_kit/toolbar/a0f59e81-a321-4dc5-ad0a-0fb94608008f 1 4053 0 0
+/forums/view/14 1 18958 0 0
+/debug_kit/toolbar/daf62680-e7a1-442c-9213-eea073377e66 1 4051 0 1
+/debug_kit/toolbar/76c81e1e-8da4-4136-969b-2cdc90982e01 1 4050 0 0
+/debug_kit/toolbar/699c8189-1e89-4e68-adbb-2d38b6178dd2 1 4050 0 0
+/debug_kit/toolbar/0b4b22ff-b98b-41b0-9d9e-52bb8ebff13e 1 4048 0 0
+/pages/mailbox/compose2 12 230144 0 0
+/debug_kit/toolbar/3b6c6af0-b95e-420b-a2de-ca69f346d138 1 4050 0 1
+/debug_kit/toolbar/954d84e3-4dbc-453d-b51f-500461454ccb 1 4053 0 0
+/debug_kit/toolbar/1fc3edde-f115-49e6-9646-fd89cae93c7c 1 4050 0 0
+/debug_kit/toolbar/2365bb0c-c2d7-4c4d-afd9-873295961920 1 4052 0 0
+/debug_kit/toolbar/888485fc-23a5-46bf-abd1-bcd113112205 1 4051 0 0
+/debug_kit/toolbar/2cd79395-d8c5-4beb-948c-1479069f030f 1 4053 0 0
+/courses/view/20 1 17439 0 0
+/debug_kit/toolbar/7effb574-3257-48d3-b61b-93468e166386 1 4050 0 0
+/debug_kit/toolbar/b2a7e2f9-1085-4423-a881-0838223e85ee 1 4053 0 0
+/debug_kit/toolbar/dd4b022f-6d93-432a-92be-a89da5b29415 1 4049 0 0
+/debug_kit/toolbar/f64cd245-99b0-41d6-9fc0-25f6f47cc5dc 1 4053 0 0
+/debug_kit/toolbar/a2caeef3-d739-432e-89ae-72b7bb896b32 1 4052 0 0
+/debug_kit/toolbar/559c77cf-07f8-4c64-8cd1-1eb1013aba2f 1 4047 0 0
+/debug_kit/toolbar/60bffb3e-490c-42ff-86fb-74c4c5674628 1 4050 0 0
+/debug_kit/toolbar/a5c1cf88-0005-45b4-9731-578afc8906aa 1 4050 0 0
+/debug_kit/toolbar/725f5cb6-2c77-4fe3-b256-a016f869e2e0 1 4050 0 0
+/debug_kit/toolbar/1b788d89-aebf-4727-9011-328bf5b22342 1 4050 0 0
+/debug_kit/toolbar/cb421d2c-0a85-48e6-b8a6-d9edc1e71a99 1 4053 0 0
+/debug_kit/toolbar/e5d55008-609e-4db6-a4ce-efdfd6f9533a 1 4050 0 0
+/debug_kit/toolbar/73e9cc7b-90f7-4869-96c2-c2d73764898f 1 4049 0 0
+/debug_kit/toolbar/99d39ca2-5c52-47aa-b2e8-cb37b907c8f7 1 4050 0 0
+/courses/members/17 1 19584 0 0
+/debug_kit/toolbar/ab95aea8-943a-4b7c-a24a-8f173e23d22a 1 4050 0 0
+/debug_kit/toolbar/3072b47a-6e06-4a84-8e1b-26fb037a8727 1 4050 0 0
+/debug_kit/toolbar/95a177b3-4a78-4c5a-be5f-5577e408f041 1 4050 0 0
+/debug_kit/toolbar/1547405c-66ee-483e-b760-ab379468372e 1 4052 0 0
+/debug_kit/toolbar/b10c63a4-73d7-4120-8e7e-9abf1bfe4df5 1 4051 0 1
+/debug_kit/toolbar/e60a0e7f-248e-4ab1-860f-80e03f5b8125 1 4053 0 0
+/debug_kit/toolbar/ad184d6a-42af-4a11-8c58-206aa473ccac 1 4050 0 0
+/debug_kit/toolbar/4124e1bc-c78d-416d-befe-9231ea1a2a38 1 4050 0 0
+/debug_kit/toolbar/fcbd519a-7359-4fc9-9e55-9291893f3b79 1 4050 0 0
+/courses/members/16 1 23930 0 0
+/debug_kit/toolbar/77cf6652-3e9e-4da3-a335-712803a711b9 1 4051 0 1
+/debug_kit/toolbar/bf554f81-2c56-40c1-b3c5-4a87c5ab3a97 1 4051 0 0
+/debug_kit/toolbar/7ae16b64-e6f3-439c-aba3-fa9b14bcd6ab 1 4050 0 0
+/debug_kit/toolbar/3b143ab8-d257-4fe4-9046-6ccfb005892d 1 4053 0 0
+/debug_kit/toolbar/62171a4b-f21f-434d-b655-2afd020c8361 1 4051 0 0
+/debug_kit/toolbar/8f76b37e-83d2-4fdf-8937-a0e96444295f 1 4050 0 0
+/debug_kit/toolbar/401ab550-093e-47c5-bef1-da965bd46225 1 4049 0 0
+/users/view-attendances/9 7 174988 0 1
+/Courses/view/17 2 36786 0 0
+/debug_kit/toolbar/0b251104-aaa7-4db1-af96-1502f5cfcba1 1 4053 0 1
+/debug_kit/toolbar/cb3ab299-f09e-4303-a675-c71ba9f4a3d7 1 4050 0 0
+/debug_kit/toolbar/72768574-a293-4b9b-9c3d-bfc19e6f4062 1 4050 0 0
+/Clubs 2 48650 0 0
+/forumtopics/view/9 1 20723 0 0
+/debug_kit/toolbar/421da829-04bb-4ab2-8812-19c520af94aa 1 4050 0 0
+/clubs/members/4 3 59562 0 0
+/forumtopics/add/14 1 17605 0 1
+/users/edit/25 1 17385 0 0
+/debug_kit/toolbar/5659decc-8d44-497e-9b8b-d191ab9c5eb3 1 4050 0 0
+/debug_kit/toolbar/52947aae-7056-4a0d-9324-604d0abd4f17 1 4050 0 0
+/debug_kit/toolbar/d90092f6-747e-4e6d-b2ec-60dce4c18205 1 4052 0 0
+/debug_kit/toolbar/2f091c61-c13b-49cc-ad54-2e080b784841 1 4051 0 0
+/debug_kit/toolbar/fbb650a6-c7dd-4b28-a5d4-b5057d81a9cb 1 4050 0 0
+/debug_kit/toolbar/25e9aeaf-a278-4284-9180-83e04dda5bd3 1 4050 0 0
+/debug_kit/toolbar/500a269a-07dd-4c19-818a-03bad1800f9c 1 4050 0 0
+/debug_kit/toolbar/9645ea84-443a-47c6-bfd1-ff70f5d0d164 1 4050 0 0
+/debug_kit/toolbar/fbfa5ad0-96d3-4e33-875f-c539404a1faf 1 4050 0 0
+/pages/mailbox/compose 8 162816 0 0
+/clubs/view/5 1 47459 0 0
+/users/edit/9 1 19522 0 0
+/users/view/25 2 36763 0 0
+/debug_kit/toolbar/bf1765f2-8497-40e1-80ee-9fb107de392d 1 4053 0 0
+/Courses/view/20 1 17439 0 0
+/debug_kit/toolbar/44d42aae-6118-435a-899d-0599d8c52197 1 4053 0 0
+/debug_kit/toolbar/1793a7ed-3cd9-4b90-829a-e9f1d9d7ca10 1 4049 0 0
+/debug_kit/toolbar/7cb510b7-7fe5-4c96-892e-893a1d2a14c2 1 4049 0 0
+/debug_kit/toolbar/69145400-c356-4086-ac0a-d9e221d58774 1 4053 0 0
+/debug_kit/toolbar/cd35bca6-ebd2-4406-9737-9af3b0487d09 1 4050 0 0
+/debug_kit/toolbar/ae61bb1b-1cdd-42ec-bac3-ea3c9c4b3d28 1 4050 0 0
+/debug_kit/toolbar/c5ac3c10-cb3d-43e2-9342-4066d6878244 1 4050 0 0
+/debug_kit/toolbar/147413b7-18fb-4532-9dca-83fb230754c9 1 4053 0 0
+/debug_kit/toolbar/78390c55-e215-47b9-b7f0-a3dddbc149ec 1 4050 0 0
+/debug_kit/toolbar/f7deefae-affb-4c72-bfcf-dfa045c1ebc5 1 4050 0 0
+/debug_kit/toolbar/0be34a08-a981-4340-aea7-e4300fc03ce0 1 4048 0 0
+/debug_kit/toolbar/a1515612-9dcd-4ae2-b194-21c57b2afad2 1 4050 0 0
+/debug_kit/toolbar/1ccf4c26-1348-4ec3-9b4a-e8cead39cf3e 1 4050 0 0
+/debug_kit/toolbar/4c4e53a1-cb28-4a0e-bd1e-1ff705cd1fe3 1 4050 0 0
+/debug_kit/toolbar/39a1b5c1-d129-4992-9564-97a668ab06ea 1 4053 0 0
+/debug_kit/toolbar/fb21be81-671a-42c5-8c57-f6be6fa3d1b3 1 4051 0 0
+/assignments/view/3 1 19630 0 0
+/debug_kit/toolbar/63f2ce07-26df-43a8-bf31-e9f51892871e 1 4050 0 0
+/Clubs/view/1 3 46815 0 0
+/debug_kit/toolbar/64096e69-a8ec-4736-ab16-20f0706bc699 1 4053 0 0
+/debug_kit/toolbar/0f08ba08-56d0-44d6-8bc2-392315e63791 1 4043 0 0
+/debug_kit/toolbar/4930c02d-fdc2-4500-ad95-a07351bda586 1 4051 0 0
+/debug_kit/toolbar/a7004b36-df54-4e24-b6f4-2a817c984e0b 1 4053 0 0
+/debug_kit/toolbar/b6abb662-aabd-4b2c-8014-3fb91338d459 1 4050 0 0
+/debug_kit/toolbar/792a845c-98ea-412e-ba2a-0eae294a9139 1 4051 0 0
+/debug_kit/toolbar/e047c55b-707e-4eb7-bbd9-75dc122d748b 1 4051 0 0
+/debug_kit/toolbar/33fd7466-3005-444e-a14f-ab78dbe0b82f 1 4050 0 0
+/debug_kit/toolbar/77c1c391-73bb-4ebd-9b4d-a6c2dcab76ff 1 4052 0 0
+/debug_kit/toolbar/f4a7db82-d89f-4e9c-9433-fdefd19085e5 1 4051 0 0
+/debug_kit/toolbar/587ea16e-0911-4404-a7ae-26f416c8e127 1 4053 0 0
+/announcements/add/1/2 11 704563 0 0
+/debug_kit/toolbar/220c1653-8a32-4a0f-9351-9e02e83855bd 1 4050 0 0
+/debug_kit/toolbar/cdfd7369-60d1-4891-9b1e-bc35b5e1d398 1 4050 0 0
+/debug_kit/toolbar/8c173233-391f-4f19-b663-249694da2148 1 4053 0 0
+/users/edit/28 1 18057 0 0
+/schools 10 274315 0 1
+/debug_kit/toolbar/a5718095-aca7-4ed2-ba88-dfc468e567d9 1 4052 0 0
+/debug_kit/toolbar/46ed2ed6-8a6c-4cf5-a0a7-4f87e4988e3a 1 4049 0 0
+/debug_kit/toolbar/358c2f96-7f5a-4937-9f44-ba2a31af9a0c 1 4047 0 0
+/debug_kit/toolbar/3755c519-9382-4667-a0cd-ac142ac95433 1 4050 0 1
+/courses/my-courses 11 246919 0 0
+/debug_kit/toolbar/a295d98c-9b1b-40a0-910e-f6e03af7d442 1 4053 0 0
+/debug_kit/toolbar/606dcfe9-7a74-4982-8a0f-b717d751324a 1 4050 0 0
+/debug_kit/toolbar/8a64a52d-da8e-4d7b-9613-abcea25e19ca 1 4052 0 0
+/debug_kit/toolbar/d3961f53-45c8-400d-9c90-5fe8ad34a19e 1 4050 0 1
+/debug_kit/toolbar/b31c5e60-eb02-4393-8f3e-bd5ff2c20118 1 4050 0 0
+/debug_kit/toolbar/d407227d-52fc-4c74-a010-00528e1cd72b 1 4053 0 0
+/debug_kit/toolbar/5a40a619-c171-49b1-b31e-c35c6249b21f 1 4050 0 0
+/debug_kit/toolbar/fb72e9fc-596b-449f-885c-8a0e0ad61726 1 4050 0 0
+/debug_kit/toolbar/f9c5f2a5-5438-4fd0-9d6d-e83165473af5 1 4049 0 0
+/debug_kit/toolbar/433b4655-956f-44f9-90f3-54804a4424b6 1 4050 0 0
+/courses/view/17 8 147144 0 0
+/debug_kit/toolbar/8ccd2a26-8222-4407-a2b6-0f276b7019cb 1 4050 0 1
+/users/teachers 6 135978 0 0
+/debug_kit/toolbar/e228efd3-f630-467e-9b2d-0256014b9985 1 4050 0 0
+/forums/ 1 24550 0 0
+/debug_kit/toolbar/94410f6f-1ae2-4583-99a4-4dd6dddf3fe5 1 4052 0 0
+/courses/syllabus/16 2 103525 0 0
+/pages/contact_us 3 13190 0 0
+/debug_kit/toolbar/203ffcdf-3873-4b20-8e1d-915be3847625 1 4052 0 0
+/debug_kit/toolbar/f43ddcda-cb47-4b12-ab1e-777d4db0a907 1 4051 0 0
+/debug_kit/toolbar/8b44f6a6-9628-43d4-b552-b7a1f4fe5469 1 4053 0 1
+/users/edit/11 2 34548 0 0
+/clubs/view/4 2 94924 0 0
+/debug_kit/toolbar/fe100674-9d0b-4e0f-abed-d5d9882ac90a 1 4050 0 0
+/debug_kit/toolbar/3723d109-0a99-4d17-a601-b7e66ca83005 1 4051 0 0
+/debug_kit/toolbar/a6ab3d5c-0e5d-4d9a-9a46-c67bd9576d6b 1 4050 0 0
+/debug_kit/toolbar/1f280f80-73fa-4b0c-a950-b9d7200199a1 2 8100 0 0
+/debug_kit/toolbar/85e8ea0c-d70f-47fb-b759-126063ed26a1 1 4050 0 0
+/debug_kit/toolbar/2d1a01b0-5e9a-44fa-8de6-9ff99daedf84 1 4050 0 1
+/debug_kit/toolbar/8c2bc113-18dc-49de-a7e7-802c9833b0f6 1 4050 0 0
+/debug_kit/toolbar/5cd46725-fd06-4738-8bb9-060d47b8823b 1 4052 0 0
+/debug_kit/toolbar/e76efaa0-a80b-4e75-a774-38c406897db6 1 4047 0 0
+/grades/course-grades/17 1 21963 0 0
+/debug_kit/toolbar/e45a54c9-89c7-4a54-bfcc-08c6a20a51ed 1 4050 0 0
+/debug_kit/toolbar/f6d874d8-ad6b-492c-b343-35c9e016fc42 1 4050 0 0
+/debug_kit/toolbar/fcaefe27-cd0a-4849-b6c3-6dd2a18e1d83 1 4049 0 0
+/assignments/course-assignments/17 1 18957 0 0
+/debug_kit/toolbar/6a10c9cf-fb61-4ed1-8702-6d406e7db42f 1 4051 0 0
+/debug_kit/toolbar/85c3a8c5-2ea2-45ea-a51f-e9c8061c2c0c 1 4051 0 0
+/debug_kit/toolbar/8ed8923e-2c9b-4de5-9b00-12c75c6efaa8 1 4050 0 0
+/debug_kit/toolbar/0fb79a69-02aa-41f8-9f82-8b510642b2e3 1 4050 0 0
+/debug_kit/toolbar/8170de71-41ed-4a8e-993a-909c08a1f822 1 4051 0 0
+/debug_kit/toolbar/8a48aaf6-a4bc-4545-b50c-06f9b5ba3779 1 4050 0 0
+/debug_kit/toolbar/2f8423d5-6ab8-4bf0-9867-43fc1eda1609 1 4050 0 0
+/debug_kit/toolbar/dfafc302-42cc-4bf4-bbf5-06bd5cf7c9ea 1 4049 0 0
+/debug_kit/toolbar/9a0d5ba0-f0b5-4fb7-a942-8fb40c92151e 1 4050 0 0
+/debug_kit/toolbar/b523c99c-1ec6-4036-b894-b61334f3ea64 1 4050 0 0
+/debug_kit/toolbar/d9e08cfe-263a-4473-9a35-9ada82bc683e 1 4051 0 0
+/debug_kit/toolbar/61a4b63d-b3ba-44a7-80c6-333f53a08f2e 1 4043 0 0
+/grades/course-grades/15 8 190562 0 2
+/debug_kit/toolbar/bc9b0895-5c67-476a-9844-7c02c21d3fb4 1 4053 0 0
+/debug_kit/toolbar/74fe6fd9-5d62-411c-bab3-43a719c0d020 1 4051 0 1
+/courses/edit-topics/15 5 124212 0 0
+/debug_kit/toolbar/3c60ea79-e466-480c-b562-a9d4acc9f990 1 4050 0 0
+/debug_kit/toolbar/c0450bbc-3192-4081-badb-d398fdbf5436 1 4053 0 0
+/debug_kit/toolbar/a52c118c-c919-41e8-87e3-3631024528a9 1 4050 0 0
+/debug_kit/toolbar/763f19fc-ef10-46bf-af1b-f465265c5cd3 2 8098 0 0
+/debug_kit/toolbar/911f4685-549f-4f2f-b698-38e54e5e4aa0 1 4043 0 0
+/debug_kit/toolbar/2a0bdfdd-9f7e-47e2-85e9-9b2ed0652fd0 1 4050 0 0
+/pages/about_us 12 404696 0 2
+/users/view/9 12 283999 0 0
+/debug_kit/toolbar/7b725db3-4246-4a23-86d1-36adb4f7b2da 1 4053 0 0
+/debug_kit/toolbar/496e589b-e030-459f-b869-e2593afab716 1 4048 0 0
+/debug_kit/toolbar/f12262b6-aa2d-452f-8ce9-4c9151847762 1 4050 0 0
+/debug_kit/toolbar/efe28495-ba18-4cf9-8c00-7014e08b9616 1 4052 0 0
+/debug_kit/toolbar/98b4eaf4-885d-4f5e-b756-3537131d0e49 1 4050 0 0
+/debug_kit/toolbar/f6f103d1-c4d6-4895-b6d3-6218d255f607 1 4050 0 0
+/debug_kit/toolbar/5c40f330-f207-49b1-9bf0-8b1210c43fee 1 4053 0 0
+/debug_kit/toolbar/853b23e0-d3c0-4e28-a89e-22d2bf4fbd66 1 4050 0 0
+/users/view/3 2 42847 0 0
+/classevents/events-with-course/16 11 259960 0 1
+/debug_kit/toolbar/c0f895f3-6cb5-4e58-bf5c-d3448904c70e 1 4052 0 1
+/informations/government-info 3 52671 0 1
+/debug_kit/toolbar/a2995d1e-59ae-4c38-ba0d-9635fb0678e0 1 4052 0 0
+/assignments/view/4 2 40794 0 0
+/debug_kit/toolbar/3f1f181c-3c7b-486d-98d6-a6f486acc50c 3 12150 0 0
+/debug_kit/toolbar/e3ee1f7f-5c9a-469b-9ee0-efde225eaa73 1 4050 0 0
+/debug_kit/toolbar/6da1a966-7d6e-411f-ac2c-a1410f35f604 1 4050 0 0
+/debug_kit/css/raleway-regular.woff 2 50680 0 0
+/debug_kit/toolbar/c7c7f0e6-d58d-45a7-be09-0890ca890b34 1 4050 0 0
+/users/edit/2 1 20182 0 0
+/courses/syllabus/17 2 104656 0 0
+/debug_kit/toolbar/0ab82ac3-7ed4-4125-97d7-1ca84b9a1694 1 4050 0 0
+/forums/view/5 7 128855 0 0
+/debug_kit/toolbar/b6667e62-4b5b-4d81-ad7d-f33e87713615 1 4053 0 0
+/debug_kit/toolbar/3a715edc-8942-41f5-ad5a-b5f9c9e00a9d 1 4050 0 0
+/debug_kit/toolbar/7024ada9-d3bd-4059-ac0a-727bdcbded12 1 4050 0 1
+/notifications 5 79092 0 1
+/clubs/my-clubs/3 1 17318 0 0
+/debug_kit/toolbar/7b33e7b2-2a1d-4dbd-954e-31739cdbda6e 1 4051 0 0
+/debug_kit/toolbar/6f97c98a-b166-4599-b230-b1b846e8f172 1 4050 0 0
+/debug_kit/toolbar/f008035e-a86c-4f17-858c-849595437202 1 4050 0 0
+/courses/members/15 2 56828 0 0
+/debug_kit/toolbar/22038910-f41e-4ff3-9cf7-5ed51c156ac7 1 4053 0 0
+/debug_kit/toolbar/a81015f5-38f5-4954-9160-c6e47b498a61 1 4043 0 0
+/debug_kit/toolbar/239441f1-264d-4a2e-bb9c-614d86ec509d 1 4052 0 0
+/users/view/11 3 54627 0 1
+/debug_kit/toolbar/2ed9f67a-ab50-45a3-806f-53493161a99f 1 4050 0 0
+/debug_kit/toolbar/7084a049-9759-4fa8-b542-d043a6376216 1 4050 0 0
+/debug_kit/toolbar/b67e1d81-c46a-4d96-895c-806a2ee69e7b 1 4051 0 0
+/debug_kit/toolbar/b2e63653-592d-4df0-8ba1-88e52262db04 1 4052 0 0
+/debug_kit/toolbar/c20d3220-7f75-44ae-8618-18670c6aebda 2 8106 0 0
+/debug_kit/toolbar/6661283c-0f70-40e6-8924-d31b15bc1932 1 4053 0 0
+/debug_kit/toolbar/e1eaa44f-66cd-4383-b451-485056d8e591 1 4051 0 0
+/debug_kit/toolbar/419df197-6169-4446-ab5e-e558abb16849 1 4052 0 0
+/debug_kit/toolbar/d1670df4-fdf5-42a1-8fcd-420a8c9ff63f 2 8100 0 1
+/debug_kit/toolbar/24d7ed40-d366-4d43-839f-ffe5610f32ea 1 4050 0 0
+/debug_kit/toolbar/3bd44952-ce64-40d7-8f99-a727ab94f94f 1 4050 0 0
+/debug_kit/toolbar/74d91fcb-7a42-4bac-a13e-9bc2c038cb8d 1 4047 0 0
+/forums/view/6 3 55202 0 0
+/debug_kit/toolbar/31202867-9c6c-4bab-9959-6781a1e675e9 1 4050 0 0
+/debug_kit/toolbar/0adec1dc-8352-4a5f-9581-bc7f22f85bc4 2 8100 0 0
+/users/staffs 5 123676 0 0
+/debug_kit/toolbar/460b2ce6-200d-4074-bb1d-0fe4c7c935e9 1 4052 0 0
+/debug_kit/toolbar/a607eb6f-3ffa-405e-ac91-26e74426768f 1 4050 0 0
+/debug_kit/toolbar/61376874-e0a1-4ded-b762-a104c08b4fad 1 4050 0 0
+/debug_kit/toolbar/b0d5d16e-7b27-4ac9-8177-1eec332be646 1 4053 0 0
+/debug_kit/toolbar/8919c3f7-b677-488d-a768-e7cf73dd5a6d 1 4050 0 0
+/debug_kit/toolbar/a5dd7589-72a4-41cb-b63e-7919e50ea7ca 1 4050 0 0
+/debug_kit/toolbar/85ab76db-2924-4f0c-90d7-48f2753f5c4c 1 4050 0 0
+/users/edit/3 1 19228 0 0
+/debug_kit/toolbar/e47aaa34-6e31-4a1a-8590-5f91f55ec0a4 1 4050 0 0
+/users/view/2 8 188139 0 1
+/clubs/members/2 4 95527 0 0
+/debug_kit/toolbar/8f6e2b98-ea89-456e-8dbc-77b6051e26cc 1 4052 0 0
+/users/view-relatives/25 5 85641 0 0
+/assignments/course-assignments/16 2 41364 0 0
+/users/edit/29 2 38244 0 0
+/evaluations/add/15/9 1 17724 0 0
+/pages/mailbox/mailbox 13 422470 0 0
+/debug_kit/toolbar/3bb5ecc7-0dc9-4502-9ad5-aa21494c0f68 1 4050 0 0
+/debug_kit/toolbar/fb9b5a20-658f-4a00-a39e-28533d3b73f0 1 4052 0 0
+/debug_kit/toolbar/ae7c8199-cf77-4054-8e36-a2b2e6304e6e 1 4050 0 0
+/debug_kit/toolbar/04558660-5cdb-4000-8c5a-7f74e5ca06b5 1 4053 0 1
+/debug_kit/toolbar/1c745e12-81e4-4557-b956-a3fdbdbdd578 1 4050 0 0
+/users/view/28 7 134094 1 0
+/debug_kit/toolbar/3ff3b997-8ba2-4d6d-bee0-a89be6af5093 1 4050 0 1
+/debug_kit/toolbar/57e42281-9296-4dc2-9148-7578929edd1d 1 4050 0 0
+/Clubs/view/4 3 112059 0 0
+/debug_kit/toolbar/1dd5014a-48c0-4ac9-877e-fa04b5b852bc 1 4051 0 0
+/debug_kit/toolbar/eaa9e9ad-552c-4357-8196-e8dd444b9c16 1 4050 0 0
+/debug_kit/toolbar/e0759025-a541-490d-9abd-d4b358f3d656 1 4051 0 0
+/debug_kit/toolbar/22375fde-378b-4bd9-96e7-baf6c3a27a33 1 4050 0 0
+/users/view/29 2 41344 0 0
+/informations/school-info 2 34891 0 0
+/debug_kit/toolbar/9330bcc2-1b1d-45ff-ba9c-94117a23949c 1 4051 0 0
+/debug_kit/toolbar/c6794e09-599f-4706-bb77-603971eccc02 1 4050 0 0
+/debug_kit/toolbar/a80f8574-1714-43af-a021-d84d008be751 1 4047 0 0
+/debug_kit/toolbar/96fbad0b-125e-4721-ae61-999b63a9f12a 1 4050 0 0
+/courses/syllabus/15 8 413972 0 0
+/debug_kit/toolbar/ede8748e-8b4f-4e7d-a212-029cf5408c1e 1 4052 0 0
+/forums/view/7 1 18965 0 0
+/debug_kit/toolbar/c18dddb0-bbc6-47a4-9739-d86d3517ecea 1 4053 0 0
+/debug_kit/toolbar/a4bdda12-3b8c-4afc-b2ee-948e56def950 1 4051 0 0
+/Users/view/9 4 87178 0 0
+/clubs/my-clubs/9 9 187943 0 0
+/debug_kit/toolbar/3a7cc422-b03b-4cb9-b3ff-1943facf4512 1 4043 0 0
+/debug_kit/toolbar/417a961f-588c-42e5-af79-dce8002c16bd 1 4052 0 0
+/debug_kit/toolbar/bfc8f35a-6b23-4060-8e72-159300abea96 1 4053 0 0
+/debug_kit/toolbar/a9c4c343-490c-46f6-9d6f-43e6ecca3adb 1 4053 0 0
+/debug_kit/toolbar/82159354-5ec0-4d9b-b2f2-af430fb16898 1 4050 0 0
+/clubs/my-clubs/2 11 200035 0 0
+/debug_kit/toolbar/9ff395c1-139f-44c8-873f-ca37837b104b 1 4050 0 0
+/debug_kit/toolbar/0768cf0f-06bd-4121-ad00-784aa87453be 1 4051 0 0
+/debug_kit/toolbar/6803ef1d-744c-4dcd-92f5-f2f095a952f3 1 4050 0 0
+/debug_kit/toolbar/ebbd692e-6421-4191-a069-a615168fdc1e 1 4053 0 0
+/clubs 7 172442 1 0
+/debug_kit/toolbar/7e2437fe-ab71-4939-af54-dbec4f4b881b 1 4053 0 0
+/debug_kit/toolbar/8045e700-2461-4ffb-8665-d28de19c0bb9 1 4050 0 0
+/classevents/events-with-course/15 8 192724 0 0
+/users 4 149068 0 0
+/debug_kit/toolbar/c41093cf-b7df-4b9a-a148-63d52a50923a 1 4051 0 0
+/debug_kit/toolbar/b0974e28-870b-40d0-9571-ca990faf9ff6 1 4050 0 1
+/classevents/view/2 2 41514 0 0
+/debug_kit/toolbar/72ca4690-cf84-4a08-ba90-b63e78558fa3 1 4050 0 0
+/courses/edit-topics/17 1 17910 0 0
+/users/view-grades/9 9 224082 0 0
+/debug_kit/toolbar/ed7afd91-56e4-4366-84de-b14405299f4a 1 4050 0 0
+/debug_kit/toolbar/e5e818db-cb86-4c53-880c-16dbab869028 1 4051 0 0
+/debug_kit/toolbar/698a21ce-d534-4789-90c5-40a2f172740d 1 4053 0 0
+/debug_kit/toolbar/f53cb13c-f1a4-4146-84da-772ea0909f68 1 4043 0 0
+/debug_kit/toolbar/a57fc127-8ed7-45fa-b975-6178f18dfde5 1 4053 0 0
+/debug_kit/toolbar/2704ae02-2d4f-49d1-a027-5564b23f3ade 1 4050 0 0
+/debug_kit/toolbar/e443c483-ab79-4d09-8a98-d5dc64e6032b 1 4050 0 0
+END_SIDER

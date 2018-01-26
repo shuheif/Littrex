@@ -6,13 +6,7 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Grade'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Assignments'), ['controller' => 'Assignments', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Assignment'), ['controller' => 'Assignments', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Courses Grades Users'), ['controller' => 'CoursesGradesUsers', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Courses Grades User'), ['controller' => 'CoursesGradesUsers', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Courses Users'), ['controller' => 'CoursesUsers', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Courses User'), ['controller' => 'CoursesUsers', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('View Course'), ['controller' => 'Courses', 'action' => 'view', $course_id]) ?></li>
     </ul>
 </nav>
 <div class="grades index large-9 medium-8 columns content">

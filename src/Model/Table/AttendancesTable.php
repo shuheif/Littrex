@@ -40,9 +40,8 @@ class AttendancesTable extends Table
         $this->belongsTo('Users', [
             'foreignKey' => 'user_id'
         ]);
-        $this->belongsTo('Courses', [
-            'foreignKey' => 'course_id',
-            'joinType' => 'INNER'
+        $this->belongsTo('Classevents', [
+            'foreignKey' => 'classevent_id',
         ]);
     }
 
@@ -57,14 +56,7 @@ class AttendancesTable extends Table
         $validator
             ->integer('id')
             ->allowEmpty('id', 'create');
-
-        $validator
-            ->boolean('attendance')
-            ->allowEmpty('attendance');
-
-        $validator
-            ->requirePresence('date', 'create')
-            ->notEmpty('date');
+            
 
         return $validator;
     }
@@ -79,17 +71,19 @@ class AttendancesTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['user_id'], 'Users'));
-        $rules->add($rules->existsIn(['course_id'], 'Courses'));
+        $rules->add($rules->existsIn(['classevent_id'], 'Classevents'));
 
         return $rules;
     }
 
-    public function findWithCourse(Query $query, array $options)
+    public function findWithUser(Query $query, array $options)
     {
-        $query = $this->find()->contain('Users');
-        $query->matching('Courses', function ($q) use ($options) {
-            return $q->where(['Courses.id' => $options['course_id']]);
+        $query = $this->find();
+        $query->matching('Users', function ($q) use ($options) {
+            return $q->where(['Users.id' => $options['user_id']]);
         });
         return $query;
     }
+
+
 }

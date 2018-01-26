@@ -67,4 +67,25 @@ class PagesController extends AppController
             throw new NotFoundException();
         }
     }
+
+    public function dashboard()
+    {
+        switch ($this->Auth->user('role')) {
+            case 1: // Admin
+                 return $this->redirect(['controller' => 'Users', 'action' => 'students']);
+            case 2: //Teacher
+                 return $this->redirect(['controller' => 'Courses', 'action' => 'myCourses', $this->Auth->user('id')]);
+            case 3: // Student
+                 return $this->redirect(['controller' => 'Courses', 'action' => 'myCourses', $this->Auth->user('id')]);
+            case 4: // Parent
+                 return $this->redirect(['controller' => 'Users', 'action' => 'viewRelatives', $this->Auth->user('id')]);
+            case 5: // Government
+                 return $this->redirect(['controller' => 'Schools', 'action' => 'index']);
+            case 6: // Staffs
+                return $this->redirect(['controller' => 'Users', 'action' => 'view', $this->Auth->user('id')]);
+            default: 
+                 return $this->redirect(['controller' => 'Users', 'action' => 'view', $this->Auth->user('id')]);
+        }
+
+    }
 }

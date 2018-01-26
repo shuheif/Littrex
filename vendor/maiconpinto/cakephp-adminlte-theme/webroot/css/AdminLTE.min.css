@@ -284,19 +284,18 @@ a:focus {
   padding: 2px 3px;
   line-height: .9;
 }
-.main-header .logo {
+.main-header > .logo {
   -webkit-transition: width 0.3s ease-in-out;
   -o-transition: width 0.3s ease-in-out;
   transition: width 0.3s ease-in-out;
   display: block;
   float: left;
   height: 50px;
-  font-size: 20px;
+  font-size: 17px;
   line-height: 50px;
-  text-align: center;
   width: 230px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  padding: 0 15px;
+  padding: 0 5px;
   font-weight: 300;
   overflow: hidden;
 }
@@ -991,7 +990,7 @@ a:focus {
 .navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a,
 .navbar-nav > .tasks-menu > .dropdown-menu > li .menu > li > a {
   display: block;
-  white-space: nowrap;
+ 
   /* Prevent text from breaking */
   border-bottom: 1px solid #f4f4f4;
 }
@@ -3013,17 +3012,19 @@ table.text-center th {
 }
 .widget-user .widget-user-image {
   position: absolute;
-  top: 65px;
-  left: 50%;
+  top: 10px;
+  left: 44%;
   margin-left: -45px;
 }
 .widget-user .widget-user-image > img {
-  width: 90px;
-  height: auto;
+  object-position: center; /* Center the image within the element */
+  width: 150px;
+  height: 150px;
+  margin-bottom: 1rem;
   border: 3px solid #fff;
 }
 .widget-user .box-footer {
-  padding-top: 30px;
+  padding-top: 35px;
 }
 .widget-user-2 .widget-user-header {
   padding: 20px;
@@ -4904,3 +4905,16 @@ table.text-center th {
     white-space: normal !important;
   }
 }
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    background-color: mediumseagreen;
+    border-color: green;
+}
+.btn-primary {
+    background-color: mediumseagreen;
+    border-color: green;
+    }

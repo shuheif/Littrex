@@ -12,6 +12,11 @@ use Cake\Utility\Text;
 class ClubsController extends AppController
 {
 
+    public function initialize() {
+        parent::initialize();
+        $this->Auth->allow(['view', 'index', 'members']);
+    }
+
     /**
      * Index method
      *
@@ -40,9 +45,10 @@ class ClubsController extends AppController
         $club = $this->Clubs->get($id, [
             'contain' => ['Images', 'Users']
         ]);
+        $announcements = $this->Clubs->Announcements->find('withClub', ['club_id' => $id, 'contain' => ['Attachments']]);
 
-        $this->set('club', $club);
-        $this->set('_serialize', ['club']);
+        $this->set(compact('club', 'announcements'));
+        $this->set('_serialize', ['club', 'announcements']);
     }
     
     /**
@@ -57,8 +63,13 @@ class ClubsController extends AppController
             return $this->redirect(['action' => 'index']);
         }
         $club = $this->Clubs->newEntity();
+
+        
         if ($this->request->is('post')) {
             $club = $this->Clubs->patchEntity($club, $this->request->data);
+            
+            $club->forum_id = $this->createForum($club->name);
+
             if ($this->Clubs->save($club)) {
                 $this->Flash->success(__('The club has been saved.'));
 
@@ -87,7 +98,7 @@ class ClubsController extends AppController
         }
 
         $club = $this->Clubs->get($id, [
-            'contain' => ['Users']
+            'contain' => ['Users', 'Images']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $data = $this->request->data;
@@ -105,13 +116,11 @@ class ClubsController extends AppController
             if ($this->Clubs->save($club)) {
                 $this->Flash->success(__('The club has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'view', $id]);
             }
             $this->Flash->error(__('The club could not be saved. Please, try again.'));
         }
-        $images = $this->Clubs->Images->find('list', ['limit' => 200]);
-        $users = $this->Clubs->Users->find('list', ['limit' => 200]);
-        $this->set(compact('club', 'images', 'users'));
+        $this->set(compact('club'));
         $this->set('_serialize', ['club']);
     }
     
@@ -158,9 +167,9 @@ class ClubsController extends AppController
     public function members($club_id)
     {
         $users = $this->paginate($this->Clubs->Users->find('withClub', ['club_id' => $club_id]));
-        $this->set(compact('users')); 
-        $this->set(['club_id' => $club_id]);
-        $this->set('_serialize', ['users']);
+        $club = $this->Clubs->get($club_id);
+        $this->set(compact('users', 'club')); 
+        $this->set('_serialize', ['users', 'club']);
     }
     
     public function addMember($club_id, $user_id = null)
@@ -188,7 +197,7 @@ class ClubsController extends AppController
             }
             
         }
-        $users = $this->paginate($this->Clubs->Users->find('all'));//Every members including faculty and admin can be added.
+        $users = $this->paginate($this->Clubs->Users->find('all')->contain('Images'));//Every members including faculty and admin can be added.
         $this->set(compact('users'));
         $course = $this->Clubs->get($club_id);
         $this->set(compact('club'));
@@ -196,13 +205,13 @@ class ClubsController extends AppController
     }
     
     public function deleteMember($club_id, $user_id)
-    {
+    {     
+        $this->request->allowMethod(['post', 'deleteMember']);
         if ($this->Auth->user('role') != 1) {
             $this->Flash->error(__('You are not allowed to delete members from clubs.'));
-            return $this->redirect(['action' => 'view', $club_id]);
+            return $this->redirect(['action' => 'members', $club_id]);
         }
 
-        $this->request->allowMethod(['post', 'delete']);
         $relationship = $this->Clubs->ClubsUsers->find('all')
             ->where(['user_id' => $user_id, 'club_id' => $club_id])->first();
         if ($this->Clubs->ClubsUsers->delete($relationship)) {
@@ -214,4 +223,23 @@ class ClubsController extends AppController
         return $this->redirect(['action' => 'members', $club_id]);
     }
 
+    private function createForum($name)
+    {
+        $forum = $this->Clubs->Forums->newEntity();
+        $forum->name = $name . 'Forum';
+        $forum->created = date("Y-m-d H:i:s");
+        $forum->modified = date("Y-m-d H:i:s");
+        if ($this->Clubs->Forums->save($forum)) {
+            return $forum->id;
+        }
+        return 0;
+    }
+
+    public function editAnnouncements($club_id)
+    {
+        $announcements = $this->Clubs->Announcements->find('withClub', ['club_id' => $club_id])->contain(['Attachments']);
+        $club = $this->Clubs->get($club_id);
+        $this->set(compact('announcements', 'club')); 
+        $this->set('_serialize', ['announcements', 'club']);
+    }
 }

@@ -11,13 +11,15 @@ class UsersHelper extends Helper
 	    switch ($id) {
 	        case 1: return "administrator";
 		        break;
-	        case 2: return "faculty";
+	        case 2: return "instructor";
 		        break;
 	        case 3: return "student";
                 break;
             case 4: return "parents";
                 break;
             case 5: return "government";
+                breal;
+            case 6: return "staff";
                 break;
 	        default: return "student";
 	    }

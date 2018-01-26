@@ -1,0 +1,443 @@
+AWSTATS DATA FILE 7.6 (build 20161204)
+# If you remove this file, all statistics for date 201711 will be lost/reset.
+# Last config file used to build this data file was /home/littrex/littrex.com/awstats/awstats.littrex.com.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2015                
+POS_TIME 2685                
+POS_VISITOR 8555                
+POS_DAY 10214               
+POS_DOMAIN 3409                
+POS_LOGIN 3769                
+POS_ROBOT 3924                
+POS_WORMS 4674                
+POS_EMAILSENDER 4805                
+POS_EMAILRECEIVER 4948                
+POS_SESSION 10797               
+POS_SIDER 10991               
+POS_FILETYPES 5083                
+POS_DOWNLOADS 5339                
+POS_OS 5387                
+POS_BROWSER 5645                
+POS_SCREENSIZE 6247                
+POS_UNKNOWNREFERER 6321                
+POS_UNKNOWNREFERERBROWSER 6482                
+POS_ORIGIN 6598                
+POS_SEREFERRALS 6734                
+POS_PAGEREFS 6918                
+POS_SEARCHWORDS 7121                
+POS_KEYWORDS 7273                
+POS_MISC 2348                
+POS_ERRORS 7332                
+POS_CLUSTER 3625                
+POS_SIDER_404 7444                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20171201032130 250 66841 13694262593205
+FirstTime 0
+LastTime 20171130154527
+LastUpdate 20171201040043 250 249 0 0 0
+TotalVisits 56                  
+TotalUnique 40                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 40                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 18 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 2 2 9124 9 19 664436
+1 5 8 96923 10 11 93469
+2 15 63 4842903 7 12 104211
+3 55 134 12724817 27 34 47886
+4 14 14 316211 31 59 1359186
+5 21 80 6428167 27 33 106050
+6 13 24 779331 15 16 26431
+7 91 232 18941856 52 79 128512
+8 73 139 6448482 47 80 748175
+9 0 0 0 1 1 0
+10 3 12 633691 8 10 18835
+11 5 21 1238053 27 41 672709
+12 7 16 699742 14 17 76933
+13 1 1 4562 3 3 4562
+14 0 0 0 10 11 25340
+15 1 1 4877 10 11 26333
+16 2 2 4649 10 11 14732
+17 0 0 0 6 7 17121
+18 6 23 1267057 13 18 244898
+19 1 1 4562 7 11 274610
+20 3 3 13686 9 12 35400
+21 1 1 4562 3 4 5669
+22 4 4 47678 9 20 614414
+23 0 0 0 6 7 9916
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 11
+us 302 741 53094258
+fr 7 7 60836
+ru 3 3 13686
+ca 2 2 9124
+nl 2 2 9754
+in 2 11 629129
+ua 1 1 4877
+jp 1 1 4562
+kw 1 4 78045
+cn 1 1 4562
+de 1 8 602100
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 16
+Googlebot/ 36 1781480 20171130085658 0
+bingpreview 21 1300841 20171126121019 0
+bingbot/ 20 983124 20171126111059 0
+Uptimebot/ 17 77554 20171108015004 0
+Baiduspider/ 17 471658 20171129014724 0
+facebookexternalhit/ 9 68738 20171130163125 0
+python 7 34139 20171113152323 0
+dataprovider\.com 5 52342 20171116074809 0
+no_user_agent 5 23125 20171130204646 0
+ips\-agent 4 47150 20171106184240 0
+(firefox/)([0-9]\.|[0-1][0]\.) 1 87 20171125165748 0
+W3C_Validator/ 1 4877 20171105111641 0
+SurveyBot/ 2 9754 20171124171540 0
+SafeDNSBot 2 9124 20171119235500 0
+MJ12bot/ 4 47150 20171128144735 0
+netcraft 1 4562 20171111134229 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 10
+css 118 6664950 0 0
+png 102 26036582 0 0
+ttf 2 90808 0 0
+woff2 20 360560 0 0
+woff 1 23424 0 0
+json 1 949 0 0
+jpg 85 8385703 0 0
+js 118 5949830 0 0
+jpeg 35 1634826 0 0
+Unknown 299 5363301 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 15
+linuxandroid 20 5
+winlong 2 2
+winxp 1 1
+unix 23 12
+ios_iphone 31 12
+macosx12 299 149
+linux 25 8
+win7 13 13
+macosx 310 96
+macosx9 1 1
+win8 8 1
+macosx10 30 14
+Unknown 4 4
+win10 13 4
+macosx8 1 1
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 29
+firefox53.0 1 1
+safari10.1 29 13
+firefox52.0 1 1
+safari10.0 4 1
+chrome56.0.2924.87 12 3
+chrome62.0.3202.94 150 60
+chrome58.0.3029.110 1 1
+chrome61.0.3163.123 23 12
+msie8.0 1 1
+iphone 27 11
+chrome61.0.3163.100 232 101
+chrome45.0.2454.94 1 1
+chrome62.0.3202.84 8 2
+chrome11.0.696.34 1 1
+mozilla 23 6
+chrome26.0.1410.65 1 1
+msie7.0 9 2
+msie10.0 2 2
+chrome34.0.1847.116 1 1
+chrome53.0.2785.116 1 1
+chrome10.0.648.204 1 1
+safari11.0.1 237 85
+msie9.0 3 3
+chrome11.0.696.71 5 5
+chrome40.0.2214.93 1 1
+Unknown 3 3
+firefox35.0 1 1
+safari7.1 1 1
+opera11.61 1 1
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 2
+Go-http-client/1.1 20171103073611
+Mozilla/5.0_Firefox/35.0 20171116204708
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 1
+Go-http-client/1.1 20171103073611
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 46 46
+From1 0 0
+From2 5 5
+From3 5 5
+From4 267 725
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 2
+www_google_co_in 1 1
+www_google_com 4 4
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 2
+http://m.facebook.com 4 4
+http://www.phpdevops.com 1 1
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 3
+403 19 53843
+302 242 0
+404 96 78732
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 20
+/courses/syllabus/SYLLABUS%20EXAMPLE%20(CLASSROOM%20COURSE)_files/hcc-but.gif 9 http://littrex.com/courses/syllabus/15
+/sitemap.xml 2 -
+/apple-touch-icon-precomposed.png 4 -
+/robots.txt 37 -
+/admin/content/sitetree/ 1 -
+/manager/ 1 -
+/apple-touch-icon.png 4 -
+/admin.php 1 -
+/dumper/dumper.php 1 -
+/courses/syllabus/SYLLABUS%20EXAMPLE%20(CLASSROOM%20COURSE)_files/gui-but.gif 9 http://littrex.com/courses/syllabus/15
+/simpla/ 1 -
+/courses/syllabus/SYLLABUS%20EXAMPLE%20(CLASSROOM%20COURSE)_files/fac-but.gif 9 http://littrex.com/courses/syllabus/15
+/downloader/ 1 -
+/libraries/sfn.php 2 -
+/administrator/ 1 -
+/courses/syllabus/SYLLABUS%20EXAMPLE%20(CLASSROOM%20COURSE)_files/tips-but.gif 9 http://littrex.com/courses/syllabus/15
+/js/mage/cookies.js 1 -
+/sitemap.xml.gz 1 -
+/admin/ 1 -
+/dumper.php 1 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 40
+12.221.112.28 192 458 36297989 20171130082407
+12.221.112.18 18 18 366007 20171102075817
+24.6.55.133 13 35 4274057 20171114055442
+172.56.13.175 12 23 774454 20171114065446
+97.90.241.31 12 28 2078271 20171117030022
+144.89.233.4 7 44 2149233 20171118052122
+52.40.36.160 6 23 1267057 20171108180253
+144.89.203.41 5 26 2355512 20171123100559
+104.239.149.11 5 5 80827 20171116042202
+54.219.178.100 4 4 18248 20171126112441
+144.89.84.13 2 11 626829 20171105111846
+213.183.51.163 1 1 4877 20171117225921
+173.212.226.33 1 8 602100 20171105111630
+50.125.101.219 1 1 87 20171125165748
+173.208.169.26 1 1 4877 20171115053629
+67.53.130.214 3 14 700517 20171130083324
+172.102.5.22 2 11 629129 20171130124657
+124.206.180.188 1 1 4562 20171116204708
+144.89.204.45 4 15 707379 20171124084306
+37.36.23.224 1 4 78045 20171106010221
+198.240.103.226 1 1 4877 20171130154527
+167.114.174.95 1 1 4562 20171116074812
+63.141.239.26 1 1 4877 20171125071046
+192.99.1.183 1 1 4562 20171117203743
+52.4.244.57 1 1 4877 20171114063852
+188.226.129.55 1 1 4877 20171112015407
+194.67.223.115 2 2 9124 20171117220115
+52.205.128.116 2 2 8911 20171114081259
+52.53.129.36 1 1 4562 20171129101028
+52.193.45.43 1 1 4562 20171109212436
+163.172.4.153 4 4 18248 20171130125408
+103.213.18.209 2 11 629129 20171120032228
+195.242.80.92 1 1 4877 20171108014218
+173.205.33.29 1 1 33677 20171116223706
+54.153.92.75 1 1 4562 20171114164631
+217.182.93.87 3 3 42588 20171103073611
+146.185.223.146 1 1 4562 20171124193844
+144.89.235.95 4 4 66051 20171130125542
+216.69.191.98 1 1 4562 20171119072023
+144.89.234.98 2 11 626829 20171114074956
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 23
+20171102 75 111 4456696 2
+20171103 3 3 42588 1
+20171105 3 19 1228929 2
+20171106 1 4 78045 1
+20171108 7 24 1271934 2
+20171109 6 34 1683522 2
+20171110 1 1 4562 1
+20171111 61 146 12899024 1
+20171112 4 16 1731260 2
+20171114 31 73 5693690 6
+20171115 2 2 9439 2
+20171116 9 18 747880 7
+20171117 16 32 2096834 4
+20171118 9 55 2776062 2
+20171119 2 2 9124 2
+20171120 4 13 638253 3
+20171121 3 8 479421 1
+20171123 2 11 629129 1
+20171124 6 17 716503 3
+20171125 3 3 9526 3
+20171126 1 1 4562 1
+20171129 1 1 4562 1
+20171130 73 187 17299388 6
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 6
+1h+ 3
+5mn-15mn 1
+0s-30s 44
+2mn-5mn 4
+30s-2mn 3
+30mn-1h 1
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 46
+/users/login 96 447337 51 32
+/pages/about_us 28 942956 5 7
+/courses/view/15 26 530348 0 0
+/courses/my-courses/9 20 440500 0 3
+/admin_l_t_e/bootstrap/fonts/glyphicons-halflings-regular.woff2 20 360560 0 7
+/pages/contact_us 11 47839 0 3
+/schools 9 246501 0 0
+/Courses/view/15 8 163963 0 0
+/pages/mailbox/mailbox 8 252840 0 0
+/courses/syllabus/15 7 361725 0 0
+/Courses/view/17 2 36666 0 0
+/admin_l_t_e/bootstrap/fonts/glyphicons-halflings-regular.woff 1 23424 0 0
+/courses/syllabus/16 2 103382 0 0
+/forums/view/6 1 18353 0 0
+/Courses/view/16 7 151347 0 0
+/users/view/3 1 18805 0 0
+/classevents/events-with-course/16 5 113840 0 0
+/Users/view/9 4 86892 0 0
+/courses/my-courses/2 3 68274 0 0
+/grades/view/6 2 46856 0 1
+/clubs/my-clubs/9 1 20819 0 0
+/users/view-attendances/17 1 23523 0 0
+/users/staffs 1 22696 0 0
+/users/view-grades/17 1 22906 0 0
+/grades/course-grades/17 1 21963 0 0
+/courses/view/16 4 86484 0 0
+/full-calendar 1 16999 0 0
+/Courses/view/19 1 17439 0 0
+/users/students 4 120907 0 1
+/pages/mailbox/compose 5 98871 0 0
+/users/view/2 1 23812 0 0
+/users/view-relatives/25 2 34142 0 0
+/forums/view/5 3 55101 0 0
+/assignments/course-assignments/16 1 20682 0 0
+/assignments/course-assignments/15 5 96660 0 0
+/admin_l_t_e/bootstrap/fonts/glyphicons-halflings-regular.ttf 2 90808 0 1
+/evaluations/add/15/9 4 70896 0 0
+/events/feed.json 1 949 0 0
+/grades/course-grades/16 2 50188 0 0
+/classevents/events-with-course/15 7 160825 0 1
+/grades/course-grades/15 7 162643 0 0
+/results/add/6/17 1 17589 0 0
+/users/view-grades/9 2 46322 0 0
+/users/view/17 1 21466 0 0
+/users/view/9 1 23956 0 0
+/users/view-attendances/9 2 47988 0 0
+END_SIDER

@@ -40,11 +40,24 @@ class ClubsTable extends Table
         $this->belongsTo('Images', [
             'foreignKey' => 'image_id'
         ]);
+
+        $this->belongsTo('Forums', [
+            'foreignKey' => 'forum_id'
+        ]);
+        
+        $this->hasMany('Announcements', [
+            'foreignKey' => 'club_id'
+        ]);
+
         $this->belongsToMany('Users', [
             'foreignKey' => 'club_id',
             'targetForeignKey' => 'user_id',
             'joinTable' => 'clubs_users'
         ]);
+        $this->hasMany('ClubsUsers', [
+            'foreignKey' => 'club_id'
+        ]);
+
     }
 
     /**
@@ -85,7 +98,7 @@ class ClubsTable extends Table
 
     public function findWithUser(Query $query, array $options)
     {
-        $query = $this->find();
+        $query = $this->find()->contain('Images');
         $query->matching('Users', function ($q) use ($options) {
             return $q->where(['Users.id' => $options['user_id']]);
         });

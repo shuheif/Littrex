@@ -3,60 +3,61 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <?php if($auth->user('role') == 1): ?>
-        <li><?= $this->Html->link(__('Edit Club'), ['action' => 'edit', $club->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Club'), ['action' => 'delete', $club->id], ['confirm' => __('Are you sure you want to delete # {0}?', $club->id)]) ?></li>
-        <?php endif; ?>
-        <li><?= $this->Html->link(__('Members List'), ['action' => 'members', $club->id]) ?> </li>
-        <li><?= $this->Html->link(__('Clubs List'), ['action' => 'index']) ?> </li>
-    </ul>
-</nav>
-<div class="clubs view large-9 medium-8 columns content">
-    <h3><?= h($club->name) ?></h3>
-    <table class="vertical-table">
-        <tr>
-            <th scope="row"><?= __('Name') ?></th>
-            <td><?= h($club->name) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Image') ?></th>
-            <td><?= $this->Html->image($this->Clubs->get_club_image($club), ['width' => '80px']) ?> </td>
-        </tr>
-    </table>
-    <div class="row">
-        <h4><?= __('Description') ?></h4>
-        <?= $this->Text->autoParagraph(h($club->description)); ?>
+<section style="padding-top: 15px;">
+  <nav class="navbar navbar-default">
+          <h3 style="margin: 20px 0px 0px 25px">
+          <?= h($club->name) ?></h3>
+        <div class="container-fluid action-bar" style="padding-left: 11px; padding-top:-5px;">
+            <ul class="nav navbar-nav action-bar">
+            <?php if($auth->user('role') == 1 || $auth->user('role') == 2): ?>
+            <li><?= $this->Html->link(__('Edit Club'), ['action' => 'edit', $club->id], ['class' => 'action-bar-before']) ?></li>
+            <li><?= $this->Html->link(__('Edit Announcements'), ['action' => 'editAnnouncements', $club->id], ['class' => 'action-bar-before']) ?></li>
+          <?php endif; ?>
+            <li><?= $this->Html->link(__('Clubs List'), ['action' => 'index'], ['class' => 'action-bar-before']) ?></li>
+            <li><?= $this->Html->link(__('Members'), ['action' => 'members', $club->id], ['class' => 'action-bar-before']) ?></li>
+            <li><?= $this->Html->link(__('Forum'), ['controller' => 'Forums', 'action' => 'view', $club->forum_id], ['class' => 'action-bar-before']) ?></li>
+            </ul>
+        </div><!--/.container-fluid -->
+      </nav>
+</section>
+
+  <section class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title"><?= __('Announcements') ?></h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+              <table class="table table-striped">
+                <tbody>
+                  <?php foreach ($announcements as $topic): ?>
+                    <tr>
+                      <td>
+                        <h4> <?= h($topic->title) ?> </h4>
+                        <?= $this->Text->autoParagraph(h($topic->description)); ?>
+                        <h5><strong>Attachments</strong></h5>
+                        <?php 
+                        if (!empty($topic->attachments)) {
+                          foreach ($topic->attachments as $attachment) {
+                            echo $this->Html->link(h($attachment->title), ['controller' => 'Attachments', 'action' => 'download', $attachment->id], ['target' => '_blank']);
+                            echo "</br>";
+                          }
+                        }   
+                        ?>
+                      </td>
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
     </div>
-    <div class="related">
-        <h4><?= __('Members') ?></h4>
-        <?php if (!empty($club->users)): ?>
-        <table cellpadding="0" cellspacing="0">
-            <tr>
-                <th scope="col"><?= __('Image') ?></th>
-                <th scope="col"><?= __('First Name') ?></th>
-                <th scope="col"><?= __('Middle Name') ?></th>
-                <th scope="col"><?= __('Last Name') ?></th>
-                <th scope="col"><?= __('Email') ?></th>
-                <th scope="col"><?= __('Role') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-            <?php foreach ($club->users as $users): ?>
-            <tr>
-                <td><?= $this->Html->image(($this->Users->get_profile_image($users)), ['width' => '50px']) ?></td>
-                <td><?= h($users->first_name) ?></td>
-                <td><?= h($users->middle_name) ?></td>
-                <td><?= h($users->last_name) ?></td>
-                <td><?= h($users->email) ?></td>
-                <td><?= h($users->role_title) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Users', 'action' => 'view', $users->id]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-        <?php endif; ?>
-    </div>
-</div>
+  </section>
+

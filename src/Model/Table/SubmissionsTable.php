@@ -47,8 +47,8 @@ class SubmissionsTable extends Table
             'foreignKey' => 'user_id',
             'joinType' => 'INNER'
         ]);
-        $this->belongsTo('Grades', [
-            'foreignKey' => 'grade_id'
+        $this->belongsTo('Results', [
+            'foreignKey' => 'result_id'
         ]);
         $this->belongsTo('Attachments', [
             'foreignKey' => 'attachment_id'
@@ -88,8 +88,6 @@ class SubmissionsTable extends Table
     {
         $rules->add($rules->existsIn(['assignment_id'], 'Assignments'));
         $rules->add($rules->existsIn(['user_id'], 'Users'));
-        $rules->add($rules->existsIn(['grade_id'], 'Grades'));
-        $rules->add($rules->existsIn(['attachment_id'], 'Attachments'));
 
         return $rules;
     }

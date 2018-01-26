@@ -7,7 +7,20 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </a>
-
+    <?php if($auth->user('role') == 2 || $auth->user('role') == 3): ?>
+    <div class="navbar-custom-menu navbar-left">
+        <ul class="nav navbar-nav"> 
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Select Your Course <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+              <?php foreach ($courses as $course): ?>
+                    <li><a href="/Courses/view/<?php echo $this->Number->Format($course->id) ?>"><?= h($course->department) ?> <?= $this->Number->Format($course->number) ?></a></li>
+                <?php endforeach; ?>
+              </ul>
+            </li>
+        </ul>
+    </div>
+    <?php endif; ?>
     <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
             <!-- Messages: style can be found in dropdown.less-->
@@ -27,10 +40,10 @@
                                         <?php echo $this->Html->image('user2-160x160.jpg', array('class' => 'img-circle', 'alt' => 'User Image')); ?>
                                     </div>
                                     <h4>
-                                        Support Team
+                                        Assignment Duedate
                                         <small><i class="fa fa-clock-o"></i> 5 mins</small>
                                     </h4>
-                                    <p>Why not buy a new awesome theme?</p>
+                                    <p>Did you finish your assignment?</p>
                                 </a>
                             </li>
                             <!-- end message -->
@@ -43,21 +56,27 @@
             <li class="dropdown notifications-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <i class="fa fa-bell-o"></i>
-                    <span class="label label-warning">10</span>
+                    <?php if(!empty($notifications)): ?>
+                    <span class="label label-warning"><?= $this->Number->format(count($notifications)) ?></span>
+                    <?php endif; ?>
                 </a>
                 <ul class="dropdown-menu">
-                    <li class="header">You have 10 notifications</li>
+                    <?php if(!empty($notifications)): ?>
+                    <li class="header">You have <?= $this->Number->format(count($notifications)) ?> notifications</li>
                     <li>
                         <!-- inner menu: contains the actual data -->
                         <ul class="menu">
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                                </a>
-                            </li>
+                        <?php foreach($notifications as $notification): ?>
+                            <li><?= $this->Html->link($notification['title'],
+                            ['controller' => $notification['controller'], 'action' => $notification['action'], $notification['variable1']]) ?></li>
+                        <?php endforeach; ?>
                         </ul>
                     </li>
-                    <li class="footer"><a href="#">View all</a></li>
+                    <li class="footer"><?= $this->Html->link("See All Notifications", 
+                        ['controller' => 'Notifications', 'action' => 'index']) ?></li>
+                    <?php else: ?>
+                    <li class="header">You have no notifications</li>
+                    <?php endif; ?>
                 </ul>
             </li>
             <!-- Tasks: style can be found in dropdown.less -->
@@ -95,41 +114,49 @@
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <?php echo $this->Html->image('user2-160x160.jpg', array('class' => 'user-image', 'alt' => 'User Image')); ?>
-                    <span class="hidden-xs">Alexander Pierce</span>
+                    <?php 
+                    if ($profile_image) {
+                        $filename = $profile_image->filepath . DS . $profile_image->filename;
+                    } else {
+                        $filename = 'profile_image.png';
+                    }
+                    echo $this->Html->image($filename, array('class' => 'user-image', 'alt' => 'User Image')); ?>
+                    <span class="hidden-xs"><?= h($auth->user('first_name') . ' ' . $auth->user('last_name')) ?></span>
                 </a>
                 <ul class="dropdown-menu">
                     <!-- User image -->
                     <li class="user-header">
-                        <?php echo $this->Html->image('user2-160x160.jpg', array('class' => 'img-circle', 'alt' => 'User Image')); ?>
-
+                        <?php
+                            $filename = $profile_image ? $profile_image->filepath . DS . $profile_image->filename : 'profile_image.png';
+                            echo $this->Html->image($filename, array('class' => 'img-circle', 'alt' => 'User Image'));
+                            //echo $this->Html->image('user2-160x160.jpg', array('class' => 'img-circle', 'alt' => 'User Image'));
+                        ?>
                         <p>
-                            Alexander Pierce - Web Developer
-                            <small>Member since Nov. 2012</small>
+                            <?= h($auth->user('first_name') . ' ' .  $auth->user('last_name')) ?>
+                            <small><?= $this->Users->get_role_name($auth->user('role')) ?></small>
                         </p>
                     </li>
-                    <!-- Menu Body -->
-                    <li class="user-body">
+                    <!-- <li class="user-body">
                         <div class="row">
                             <div class="col-xs-4 text-center">
-                                <a href="#">Followers</a>
+                                <a href="#">Attendance</a>
                             </div>
                             <div class="col-xs-4 text-center">
-                                <a href="#">Sales</a>
+                                <a href="#">Grade</a>
                             </div>
                             <div class="col-xs-4 text-center">
-                                <a href="#">Friends</a>
+                                <a href="#">Setting</a>
                             </div>
                         </div>
-                        <!-- /.row -->
-                    </li>
+                        
+                    </li> -->
                     <!-- Menu Footer-->
                     <li class="user-footer">
                         <div class="pull-left">
-                            <a href="#" class="btn btn-default btn-flat">Profile</a>
+                            <?= $this->Html->link(__('Profile'), ['controller' => 'Users', 'action' => 'view', $auth->user('id')], ['class' => 'btn btn-default btn-flat']) ?>
                         </div>
                         <div class="pull-right">
-                            <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                            <?= $this->Html->link(__('Sign out'), ['controller' => 'Users', 'action' => 'logout'], ['class' => 'btn btn-default btn-flat']) ?>
                         </div>
                     </li>
                 </ul>

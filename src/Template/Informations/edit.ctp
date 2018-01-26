@@ -3,30 +3,27 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $information->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $information->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Informations'), ['action' => 'index']) ?></li>
-    </ul>
-</nav>
+
+<section style="padding-top: 15px;">
+  <nav class="navbar navbar-default">
+          <h3 style="margin: 20px 0px 0px 25px">Edit Informations</h3>
+        <div class="container-fluid action-bar" style="padding-left: 11px; padding-top:-5px;">
+            <ul class="nav navbar-nav action-bar">
+            <li><?= $this->Html->link(__('Government Informations'), ['action' => 'governmentInfo'], ['class' => 'action-bar-before']) ?></li>
+            <li><?= $this->Html->link(__('School Informations'), ['action' => 'schoolInfo'], ['class' => 'action-bar-before']) ?></li>
+            </ul>
+        </div><!--/.container-fluid -->
+      </nav>
+</section>
+
 <div class="informations form large-9 medium-8 columns content">
     <?= $this->Form->create($information) ?>
     <fieldset>
-        <legend><?= __('Edit Information') ?></legend>
         <?php
-            echo $this->Form->input('user_id', ['options' => $users]);
-            echo $this->Form->input('priority');
             echo $this->Form->input('title');
             echo $this->Form->input('description');
-            echo $this->Form->input('date');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Save')) ?>
     <?= $this->Form->end() ?>
 </div>

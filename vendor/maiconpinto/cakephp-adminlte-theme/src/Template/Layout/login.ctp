@@ -22,48 +22,60 @@
   <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+<![endif]-->
 </head>
-<body class="hold-transition login-page">
-<div class="login-box">
-  <div class="login-logo">
-    <a href="<?php echo $this->Url->build(array('controller' => 'pages', 'action' => 'display', 'home')); ?>"><?php echo $theme['logo']['large'] ?></a>
-  </div>
-  <!-- /.login-logo -->
-  <div class="login-box-body">
-    <p class="login-box-msg"><?php echo __('Sign in to start your session') ?></p>
-    <p> <?php echo $this->Flash->render(); ?> </p>
-    <p> <?php echo $this->Flash->render('auth'); ?> </p>
 
-<?php echo $this->fetch('content'); ?>
+<body class="login-page" style="">
 
-    <?php
-    if (isset($theme['login']['show_social']) && $theme['login']['show_social']) {
-        ?>
-        <div class="social-auth-links text-center">
-          <p>- <?php echo __('OR') ?> -</p>
-          <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> <?php echo __('Sign in using Facebook') ?></a>
-          <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> <?php echo __('Sign in using Google+') ?></a>
-        </div>
-        <?php
-    }
-    ?>
+  <nav class="navbar navbar-inverse navbar-static-top" style="height: 75px; font-size: 16px;">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="http://littrex.com"><img height=50px src="http://littrex.com/img/Littrex_Logo.png">
+        </a>
+      </div>
+      <div id="navbar3" class="navbar-collapse collapse" style="margin-top: 10px;">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="menu-item"><a href="http://littrex.com">Home</a></li>
+          <li class="menu-item"><a href="http://littrex.com/pages/about_us">About Us</a></li>
+          <li class="menu-item"><a href="http://littrex.com/pages/contact_us">Contact Us</a></li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+  </nav>
 
-    <?php
-    if (isset($theme['login']['show_remember']) && $theme['login']['show_remember']) {
-        ?>
-        <a href="#"><?php echo __('I forgot my password') ?></a><br>
-        <?php
+  <div class="login-box" style="font-size: 16px; border-radius: .28571429rem;
+    box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;">
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+      <h3 class="login-box-msg"><?php echo __('Sign in to start learning') ?></h3>
+      <p> <?php echo $this->Flash->render(); ?> </p>
+      <!-- <p> <?php echo $this->Flash->render('auth'); ?> </p> -->
+
+      <?php echo $this->fetch('content'); ?>
+
+      <?php
+      if (isset($theme['login']['show_remember']) && $theme['login']['show_remember']) {
+      ?>
+      <a href="#"><?php echo __('I forgot my password') ?></a><br>
+      <?php
     }
     if (isset($theme['login']['show_register']) && $theme['login']['show_register']) {
-        ?>
-        <a href="#" class="text-center"><?php echo __('Register a new membership') ?></a>
-        <?php
-    }
     ?>
+    <a href="#" class="text-center"><?php echo __('Register a new membership') ?></a>
+    <?php
+  }
+  ?>
 
-  </div>
-  <!-- /.login-box-body -->
+</div>
+<!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
 

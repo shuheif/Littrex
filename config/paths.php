@@ -49,7 +49,7 @@ define('CONFIG', ROOT . DS . 'config' . DS);
 /**
  * File path to the webroot directory.
  */
-define('WWW_ROOT', ROOT . DS . 'webroot' . DS);
+define('WWW_ROOT', ROOT . DS . 'public_html' . DS);
 
 /**
  * Path to the tests directory.

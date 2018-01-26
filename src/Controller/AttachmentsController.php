@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Utility\Text;
+use Cake\Http\Response;
 
 /**
  * Attachments Controller
@@ -11,36 +12,6 @@ use Cake\Utility\Text;
  */
 class AttachmentsController extends AppController
 {
-
-    /**
-     * Index method
-     *
-     * @return \Cake\Network\Response|null
-     */
-    public function index()
-    {
-        $attachments = $this->paginate($this->Attachments);
-
-        $this->set(compact('attachments'));
-        $this->set('_serialize', ['attachments']);
-    }
-
-    /**
-     * View method
-     *
-     * @param string|null $id Attachment id.
-     * @return \Cake\Network\Response|null
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function view($id = null)
-    {
-        $attachment = $this->Attachments->get($id, [
-            'contain' => ['Assignments']
-        ]);
-
-        $this->set('attachment', $attachment);
-        $this->set('_serialize', ['attachment']);
-    }
 
     /**
      * Add method
@@ -55,11 +26,11 @@ class AttachmentsController extends AppController
             $attachment = $this->Attachments->patchEntity($attachment, $data);
             if ($data['attachment']['size'] > 0 && $data['attachment']['error'] == 0) {
                 $filename = Text::uuid() . $data['attachment']['name'];
-                $filepath = 'user_attachments/';
+                $filepath = 'attachments/user_attachments/';
                 $attachment->filename = $filename;
                 $attachment->filepath = $filepath;
                 // WWW_ROOT /home/users/0/raindrop.jp-shuhei/web/shuhei_dev/webroot/
-                if (move_uploaded_file($data['attachment']['tmp_name'], WWW_ROOT . 'attachments/' . DS . $filepath . $filename)) {
+                if (move_uploaded_file($data['attachment']['tmp_name'], WWW_ROOT . $filepath . $filename)) {
                     if ($this->Attachments->save($attachment)) {
                         $relationship = $this->Attachments->AttachmentsTopics->newEntity();
                         $relationship->attachment_id = $attachment->id;
@@ -121,5 +92,12 @@ class AttachmentsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function download($id)
+    {
+        $attachment = $this->Attachments->get($id);
+        $this->response->file(WWW_ROOT . 'attachments/' . $attachment->filepath . $attachment->filename);
+        return $this->response;
     }
 }

@@ -18,6 +18,8 @@
     folder instead of downloading all of them to reduce the load. -->
     <?php echo $this->Html->css('AdminLTE.skins/skin-blue'); ?>
 
+    <?php echo $this->Html->css('custom'); ?>
+ 
     <?php echo $this->fetch('css'); ?>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -34,16 +36,19 @@
             <!-- Logo -->
             <a href="<?php echo $this->Url->build('/'); ?>" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><?php echo $theme['logo']['mini'] ?></span>
+                <span class="logo-mini"><img style ="margin-left: 15px;" width=35px height=35px src="http://littrex.com/img/rcc_logo.jpg"></span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><?php echo $theme['logo']['large'] ?></span>
+                <!-- <span class="logo-lg"><?php echo $theme['logo']['large'] ?></span> -->
+                <span class="logo-lg">Royal College Curepipe  <img width=40px height=40px src="http://littrex.com/img/rcc_logo.jpg"></span>
+                
+
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <?php echo $this->element('nav_top') ?>
         </header>
 
         <!-- Left side column. contains the sidebar -->
-        <?php echo $this->element('aside-main-sidebar'); ?>
+        <?php echo $this->element('aside_main_sidebar'); ?>
 
         <!-- =============================================== -->
 
@@ -57,7 +62,7 @@
         </div>
         <!-- /.content-wrapper -->
 
-        <?php echo $this->element('footer'); ?>
+        <?php echo $this->element('footer_littrex'); ?>
 
 <!-- Add the sidebar's background. This div must be placed
     immediately after the control sidebar -->

@@ -3,18 +3,22 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Users List'), ['action' => 'index']) ?></li>
-    </ul>
-</nav>
+<section style="padding-top: 15px;">
+  <nav class="navbar navbar-default">
+          <h3 style="margin: 20px 0px 0px 25px">Add user</h3>
+        <div class="container-fluid action-bar" style="padding-left: 11px; padding-top:-5px;">
+            <ul class="nav navbar-nav action-bar">
+              <li><?= $this->Html->link(__('Users List'), ['action' => 'index', $user->id], ['class' => 'action-bar-before']) ?> </li>
+            </ul>
+        </div><!--/.container-fluid -->
+      </nav>
+</section>
+
 <div class="users form large-9 medium-8 columns content">
     <?= $this->Form->create($user) ?>
     <fieldset>
-        <legend><?= __('Add User') ?></legend>
         <?php
-            echo $this->Form->input('role', ['options' => [1 => 'admin', 2 => 'faculty', 3 => 'student', 4 => 'parents', 5 => 'government']]);
+            echo $this->Form->input('role', ['options' => [1 => 'admin', 2 => 'instructor', 3 => 'student', 4 => 'parents', 5 => 'government', 6 => 'staff']]);
             echo $this->Form->input('email');
             echo $this->Form->input('password');
             echo $this->Form->input('first_name');

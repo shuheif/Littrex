@@ -42,6 +42,11 @@ class AssignmentsTable extends Table
             'foreignKey' => 'course_id',
             'joinType' => 'INNER'
         ]);
+        
+        $this->belongsTo('Grades', [
+            'foreignKey' => 'grade_id',
+        ]);
+
         $this->hasMany('Submissions', [
             'foreignKey' => 'assignment_id'
         ]);

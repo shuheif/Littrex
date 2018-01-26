@@ -41,6 +41,14 @@ class CoursesTable extends Table
         $this->displayField('title');
         $this->primaryKey('id');
 
+        $this->belongsTo('Images', [
+            'foreignKey' => 'image_id'
+        ]);
+        
+        $this->belongsTo('Forums', [
+            'foreignKey' => 'forum_id'
+        ]);
+
         $this->belongsTo('Users', [
             'foreignKey' => 'teacher_id',
             'joinType' => 'INNER',
@@ -49,7 +57,7 @@ class CoursesTable extends Table
         $this->hasMany('Assignments', [
             'foreignKey' => 'course_id'
         ]);
-        $this->hasMany('Attendances', [
+        $this->hasMany('Classevents', [
             'foreignKey' => 'course_id'
         ]);
         $this->hasMany('Topics', [
@@ -58,11 +66,18 @@ class CoursesTable extends Table
         $this->hasMany('CoursesUsers', [
             'foreignKey' => 'course_id'
         ]);
+        $this->hasMany('Grades', [
+            'foreignKey' => 'course_id'
+        ]);
         $this->belongsToMany('Users', [
             'foreignKey' => 'course_id',
             'targetForeignKey' => 'user_id',
             'joinTable' => 'courses_users'
         ]);
+        $this->belongsTo('EventTypes', [
+            'foreignKey' => 'event_type_id'
+        ]);
+
     }
 
     /**
@@ -91,6 +106,9 @@ class CoursesTable extends Table
         $validator
             ->allowEmpty('syllabus');
 
+        $validator
+            ->allowEmpty('room');
+
         return $validator;
     }
 
@@ -104,6 +122,7 @@ class CoursesTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['teacher_id'], 'Users'));
+        $rules->add($rules->existsIn(['event_type_id'], 'EventTypes'));
 
         return $rules;
     }

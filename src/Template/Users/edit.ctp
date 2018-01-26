@@ -3,35 +3,27 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('End Editing'), ['action' => 'view', $user->id]) ?></li>
-        <?php if($auth->user('role') == 1): ?>
-        <li><?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?><li>
-        <?php if($user->role == 4): ?>
-        <li><?= $this->Html->link(__('Add Relationship'), ['action' => 'addRelationship', $user->id]) ?></li>
-        <?php endif; ?>
-        <?php endif; ?>
-    </ul>
-</nav>
+<section style="padding-top: 15px;">
+  <nav class="navbar navbar-default">
+          <h3 style="margin: 20px 0px 0px 25px">Edit Profile - <?= h($user->first_name . ' ' . $user->last_name) ?></h3>
+        <div class="container-fluid action-bar" style="padding-left: 11px; padding-top:-5px;">
+            <ul class="nav navbar-nav action-bar">
+            <li><?= $this->Html->link(__('Profile'), ['action' => 'view', $user->id]) ?></li>
+            <li><?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?><li>
+            </ul>
+        </div><!--/.container-fluid -->
+      </nav>
+</section>
+
 <div class="users form large-9 medium-8 columns content">
     <?= $this->Form->create($user, ['type' => 'file']) ?>
     <fieldset>
-        <legend><?= __('Edit User') ?></legend>
-            <h3><?= h($user->first_name) ?>
-                <?= h($user->middle_name) ?>
-                <?= h($user->last_name) ?>
-            </h3>
-            <?= $this->Users->get_role_name($user->role) ?>
-            <?= $this->Html->image($this->Users->get_profile_image($user), ['width' => '100px']) ?>
-            <?php 
-                if ($user->image) {
-                    echo $this->Html->image('user_images/' . $user->image->filepath);
-                } else {
-                    echo $this->Html->image('profile_image.png');
-                }
-                echo $this->Form->input('image', ['type' => 'file']);
+            <?= $this->Html->image($this->Users->get_profile_image($user), ['width' => '150px']) ?>
+            <?= $this->Form->input('image', ['type' => 'file', 'allowEmpty' => true]) ?>
+            <?
+                echo $this->Form->input('first_name');
+                echo $this->Form->input('middle_name');
+                echo $this->Form->input('last_name');
                 echo $this->Form->input('gender', ['options' => [1 => 'male', 2 => 'female']]);
                 echo $this->Form->input('email', ['type' => 'email']);
                 echo $this->Form->input('password');

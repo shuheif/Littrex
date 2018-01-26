@@ -33,12 +33,13 @@ class GradesController extends AppController
      */
     public function view($id = null)
     {
-        $grade = $this->Grades->get($id, [
-            'contain' => ['Assignments', 'CoursesGradesUsers', 'CoursesUsers']
-        ]);
+        $grade = $this->Grades->get($id);
+        $course = $this->Grades->Courses->get($grade->course_id);
+        $members = $this->Grades->Courses->Users->find('withCourse', ['course_id' => $course->id]);
+        $results = $this->Grades->Results->find('withGrade', ['grade_id' => $id]);
 
-        $this->set('grade', $grade);
-        $this->set('_serialize', ['grade']);
+        $this->set(compact('grade', 'course', 'members', 'results'));
+        $this->set('_serialize', ['grade', 'course', 'members', 'results']);
     }
 
     /**
@@ -46,20 +47,22 @@ class GradesController extends AppController
      *
      * @return \Cake\Network\Response|null Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function add($course_id)
     {
         $grade = $this->Grades->newEntity();
+        $course = $this->Grades->Courses->get($course_id);
         if ($this->request->is('post')) {
             $grade = $this->Grades->patchEntity($grade, $this->request->data);
+            $grade->course = $course;
             if ($this->Grades->save($grade)) {
                 $this->Flash->success(__('The grade has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'courseGrades', $course_id]);
             }
             $this->Flash->error(__('The grade could not be saved. Please, try again.'));
         }
-        $this->set(compact('grade'));
-        $this->set('_serialize', ['grade']);
+        $this->set(compact('grade', 'course'));
+        $this->set('_serialize', ['grade', 'course']);
     }
 
     /**
@@ -106,4 +109,15 @@ class GradesController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function courseGrades($course_id)
+    {
+        $grades = $this->paginate($this->Grades->find('withCourse', ['course_id' => $course_id]));
+        $course = $this->Grades->Courses->get($course_id);
+        
+        $this->set(compact('grades', 'course'));
+        $this->set('_serialize', ['grades', 'course']);
+    }
+
+    
 }

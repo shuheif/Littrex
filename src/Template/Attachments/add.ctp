@@ -3,12 +3,12 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Back to topics'), ['controller' => 'Courses', 'action' => 'edit_topics', $course_id]) ?></li>
-    </ul>
-</nav>
+<section style="padding-top: 15px;">
+  <nav class="navbar navbar-default">
+          <h3 style="margin: 20px 0px 0px 25px">Add attachment</h3>
+  </nav>
+</section>
+
 <div class="attachments form large-9 medium-8 columns content">
     <?= $this->Form->create($attachment, ['type' => 'file']) ?>
     <fieldset>

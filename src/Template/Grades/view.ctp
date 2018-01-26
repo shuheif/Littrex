@@ -3,132 +3,123 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Grade'), ['action' => 'edit', $grade->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Grade'), ['action' => 'delete', $grade->id], ['confirm' => __('Are you sure you want to delete # {0}?', $grade->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Grades'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Grade'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Assignments'), ['controller' => 'Assignments', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Assignment'), ['controller' => 'Assignments', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Courses Grades Users'), ['controller' => 'CoursesGradesUsers', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Courses Grades User'), ['controller' => 'CoursesGradesUsers', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Courses Users'), ['controller' => 'CoursesUsers', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Courses User'), ['controller' => 'CoursesUsers', 'action' => 'add']) ?> </li>
-    </ul>
-</nav>
-<div class="grades view large-9 medium-8 columns content">
-    <h3><?= h($grade->title) ?></h3>
-    <table class="vertical-table">
-        <tr>
-            <th scope="row"><?= __('Title') ?></th>
-            <td><?= h($grade->title) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($grade->id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Grade') ?></th>
-            <td><?= $this->Number->format($grade->grade) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Date') ?></th>
-            <td><?= h($grade->date) ?></td>
-        </tr>
-    </table>
-    <div class="row">
-        <h4><?= __('Description') ?></h4>
-        <?= $this->Text->autoParagraph(h($grade->description)); ?>
-    </div>
-    <div class="related">
-        <h4><?= __('Related Assignments') ?></h4>
-        <?php if (!empty($grade->assignments)): ?>
-        <table cellpadding="0" cellspacing="0">
-            <tr>
-                <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Description') ?></th>
-                <th scope="col"><?= __('Due Date') ?></th>
-                <th scope="col"><?= __('Submit Date') ?></th>
-                <th scope="col"><?= __('Grade Id') ?></th>
-                <th scope="col"><?= __('Attachment Id') ?></th>
-                <th scope="col"><?= __('User Id') ?></th>
-                <th scope="col"><?= __('Course Id') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-            <?php foreach ($grade->assignments as $assignments): ?>
-            <tr>
-                <td><?= h($assignments->id) ?></td>
-                <td><?= h($assignments->description) ?></td>
-                <td><?= h($assignments->due_date) ?></td>
-                <td><?= h($assignments->submit_date) ?></td>
-                <td><?= h($assignments->grade_id) ?></td>
-                <td><?= h($assignments->attachment_id) ?></td>
-                <td><?= h($assignments->user_id) ?></td>
-                <td><?= h($assignments->course_id) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Assignments', 'action' => 'view', $assignments->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Assignments', 'action' => 'edit', $assignments->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Assignments', 'action' => 'delete', $assignments->id], ['confirm' => __('Are you sure you want to delete # {0}?', $assignments->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-        <?php endif; ?>
-    </div>
-    <div class="related">
-        <h4><?= __('Related Courses Grades Users') ?></h4>
-        <?php if (!empty($grade->courses_grades_users)): ?>
-        <table cellpadding="0" cellspacing="0">
-            <tr>
-                <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Course Id') ?></th>
-                <th scope="col"><?= __('Grade Id') ?></th>
-                <th scope="col"><?= __('User Id') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-            <?php foreach ($grade->courses_grades_users as $coursesGradesUsers): ?>
-            <tr>
-                <td><?= h($coursesGradesUsers->id) ?></td>
-                <td><?= h($coursesGradesUsers->course_id) ?></td>
-                <td><?= h($coursesGradesUsers->grade_id) ?></td>
-                <td><?= h($coursesGradesUsers->user_id) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'CoursesGradesUsers', 'action' => 'view', $coursesGradesUsers->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'CoursesGradesUsers', 'action' => 'edit', $coursesGradesUsers->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'CoursesGradesUsers', 'action' => 'delete', $coursesGradesUsers->id], ['confirm' => __('Are you sure you want to delete # {0}?', $coursesGradesUsers->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-        <?php endif; ?>
-    </div>
-    <div class="related">
-        <h4><?= __('Related Courses Users') ?></h4>
-        <?php if (!empty($grade->courses_users)): ?>
-        <table cellpadding="0" cellspacing="0">
-            <tr>
-                <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Course Id') ?></th>
-                <th scope="col"><?= __('User Id') ?></th>
-                <th scope="col"><?= __('Grade Id') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-            <?php foreach ($grade->courses_users as $coursesUsers): ?>
-            <tr>
-                <td><?= h($coursesUsers->id) ?></td>
-                <td><?= h($coursesUsers->course_id) ?></td>
-                <td><?= h($coursesUsers->user_id) ?></td>
-                <td><?= h($coursesUsers->grade_id) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'CoursesUsers', 'action' => 'view', $coursesUsers->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'CoursesUsers', 'action' => 'edit', $coursesUsers->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'CoursesUsers', 'action' => 'delete', $coursesUsers->id], ['confirm' => __('Are you sure you want to delete # {0}?', $coursesUsers->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-        <?php endif; ?>
-    </div>
-</div>
+<section style="padding-top: 15px;">
+  <nav class="navbar navbar-default">
+          <h3 style="margin: 20px 0px 0px 25px">Grades View - <?= h($grade->title) ?></h3>
+        <div class="container-fluid action-bar" style="padding-left: 11px; padding-top:-5px;">
+            <ul class="nav navbar-nav action-bar">
+            <li><?= $this->Html->link(h($course->department . $course->number . ' ' . $course->title), ['controller' => 'Courses', 'action' => 'view', $course->id], ['class' => 'action-bar-before']) ?></li>
+            <li><?= $this->Html->link("Grades List", ['action' => 'courseGrades', $course->id], ['class' => 'action-bar-before']) ?></li>
+            </ul>
+        </div><!--/.container-fluid -->
+      </nav>
+</section>
+
+<!-- Main content -->
+    <section class="content">
+        <div class="container">
+            <div class="row">
+               <div class="col-md-5">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">General Information</h3>
+                    </div>
+                    <div class="panel-body">
+                      <div class="row">
+                          <table class="table table-user-information">
+                            <tbody>
+                              <tr>
+                                <th scope="row"><?= __('Title') ?></th>
+                                <td><?= h($grade->title) ?></td>
+                              </tr>
+                              <tr>
+                                <th scope="row"><?= __('Description') ?></th>
+                                <td><?= $this->Text->autoParagraph(h($grade->description)); ?></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-7">
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="box">
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                      <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                       <tr>
+                            <th scope="col"><?= __('First Name') ?></th>
+                            <th scope="col"><?= __('Last Name') ?></th>
+                            <th scope="col" class="actions"><?= __('Grade') ?></th>
+                        </tr>
+                        </thead>
+                            <tbody>
+                            <?php foreach ($members as $member): ?>
+                            <tr>
+                                <td><?= h($member->first_name) ?></td>
+                                <td><?= h($member->last_name) ?></td>
+                                <td><?php
+                                    $hasResult = false;
+                                    foreach($results as $result) {
+                                        if ($result->user_id == $member->id) {
+                                            echo "<li>";
+                                            echo $this->Html->link(__('View'), ['controller' => 'Results', 'action' => 'view', $result->id]);
+                                            echo "</li>";
+                                            $hasResult = true;
+                                            break;
+                                        }
+                                    }
+                                    if (!$hasResult && ($auth->user('role') == 1 || $auth->user('role') == 2)) {
+                                        echo "<li>";
+                                        echo $this->Html->link(__('Register Score'), ['controller' => 'Results', 'action' => 'add', $grade->id, $member->id]);
+                                        echo "</li>";
+                                    } ?></td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!-- /.box-body -->
+                  </div>
+                  <!-- /.box -->
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
+              </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+
+<?php
+$this->Html->css([
+    'AdminLTE./plugins/datatables/dataTables.bootstrap',
+  ],
+  ['block' => 'css']);
+
+$this->Html->script([
+  'AdminLTE./plugins/datatables/jquery.dataTables.min',
+  'AdminLTE./plugins/datatables/dataTables.bootstrap.min',
+],
+['block' => 'script']);
+?>
+
+<?php $this->start('scriptBotton'); ?>
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
+<?php $this->end(); ?>

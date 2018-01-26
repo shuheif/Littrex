@@ -3,44 +3,49 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('My Courses'), ['action' => 'myCourses']) ?></li>
-        <li><?= $this->Html->link(__('Courses List'), ['action' => 'index']) ?></li>
-    </ul>
-</nav>
-<div class="courses index large-9 medium-8 columns content">
-    <h3><?= __('My Courses') ?></h3>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
-            <tr>
-                <th scope="col"><?= $this->Paginator->sort('title') ?></th>
-            </tr>
-        </thead>
-        <tbody>
+<section style="padding-top: 15px;">
+  <nav class="navbar navbar-default">
+          <h3 style="margin: 20px 0px 0px 25px">My Courses</h3>
+        <div class="container-fluid action-bar" style="padding-left: 11px; padding-top:-5px;">
+            <ul class="nav navbar-nav action-bar">
+            <li><?= $this->Html->link(__('Courses List'), ['action' => 'index']) ?></li>
+            </ul>
+        </div><!--/.container-fluid -->
+      </nav>
+</section>
+
+<section class="content">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="row">
             <?php foreach ($courses as $course): ?>
-            <tr>
-                <td class="actions">
-                    <?php
-                        $title = h($course->department) 
-                            . $this->Number->format($course->number) 
-                            . h($course->title);
-                        echo $this->Html->link($title, ['action' => 'view', $course->id]) 
-                    ?>
-                </td>
-            </tr>
+            <div class="col-xs-6 col-lg-3">
+            <a href="/Courses/view/<?php echo $this->Number->Format($course->id) ?>">
+              <div class="box box-widget widget-user-2">
+                    <!-- Add the bg color to the header using any of the bg-* classes -->
+                <div class="widget-user-header bg-blue">
+                    <div class="widget-user-image">
+                        <?php echo $this->Html->image($this->Courses->get_course_image($course), ['alt' => 'User Avatar', 'class' => 'img-circle']); ?>
+                    </div>
+                      <!-- /.widget-user-image -->
+                    <h3 class="widget-user-username"><?= h($course->department) ?> <?= $this->Number->Format($course->number) ?></h3>
+                    <h5 class="widget-user-desc"><?= h($course->title) ?></h5>
+                </div>
+              </a>
+                <div class="box-footer no-padding">
+                      <ul class="nav nav-stacked">
+                        <li><a href="#">Instructor<span class="pull-right badge bg-aqua"><?= h($course->teacher->first_name . ' ' . $course->teacher->last_name) ?></span></a></li>
+                        <li><a href="#">Classroom<span class="pull-right badge bg-green"><?= h($course->room) ?></span></a></li>
+                        <li></li>
+                        <a style="width: 75%; margin: auto; margin-top: 10px; margin-bottom: 10px"href="/Courses/view/<?php echo $this->Number->Format($course->id) ?>" type="button" class="btn btn-block btn-primary">View Course</a>
+                      </ul>
+                </div>
+              </div>
+            </div><!--/.col-xs-6.col-lg-4-->
             <?php endforeach; ?>
-        </tbody>
-    </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
-    </div>
-</div>
+        </div><!--/row-->
+        </div><!--/.col-xs-12.col-sm-9-->
+      </div><!--/row-->
+</section>
+
+

@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Utility\Text;
 
 /**
  * Courses Controller
@@ -18,7 +19,7 @@ class CoursesController extends AppController
      */
     public function index()
     {
-        $courses = $this->paginate($this->Courses);
+        $courses = $this->paginate($this->Courses->find('all')->contain('Images'));
 
         $this->set(compact('courses'));
         $this->set('_serialize', ['courses']);
@@ -39,10 +40,8 @@ class CoursesController extends AppController
         $teacher = $this->Courses->Users->get($course->teacher_id);
         $topics = $this->Courses->Topics->find('withCourse', ['course_id' => $id, 'contain' => ['Attachments', 'Assignments']]);
     
-        $this->set('course', $course);
-        $this->set('teacher', $teacher);
-        $this->set('topics', $topics);
-        $this->set('_serialize', ['course']);
+        $this->set(compact('course', 'teacher', 'topics'));
+        $this->set('_serialize', ['course', 'teacher', 'topics']);
     }
     
     /**
@@ -62,14 +61,22 @@ class CoursesController extends AppController
             $data = $this->request->data;
             $course = $this->Courses->patchEntity($course, $data);
             
-            if ($this->Courses->save($course, ['associated' => ['Users']])) {
-                $teacher = $this->Courses->Users->get($course->teacher_id);
-                $relationship = $this->Courses->CoursesUsers->newEntity();
-                $relationship->course_id = $course->id;
-                $relationship->user_id = $teacher->id;
-                if ($this->Courses->CoursesUsers->save($relationship)) {
-                    $this->Flash->success(__('The course has been saved.'));
-                    return $this->redirect(['action' => 'index']);
+            $course->forum_id = $this->createForum($course->title);
+    
+            $event_type = $this->Courses->EventTypes->newEntity();
+            $event_type->name = $course->department . ' ' . $course->number;
+            $event_type->color = "Blue";
+            if ($this->Courses->EventTypes->save($event_type)) {
+                $course->event_type_id = $event_type->id;
+                if ($this->Courses->save($course, ['associated' => ['Users']])) {
+                    $teacher = $this->Courses->Users->get($course->teacher_id);
+                    $relationship = $this->Courses->CoursesUsers->newEntity();
+                    $relationship->course_id = $course->id;
+                    $relationship->user_id = $teacher->id;
+                    if ($this->Courses->CoursesUsers->save($relationship)) {
+                        $this->Flash->success(__('The course has been saved.'));
+                        return $this->redirect(['action' => 'index']);
+                    }
                 }
             }
             $this->Flash->error(__('The course could not be saved. Please, try again.'));
@@ -93,7 +100,7 @@ class CoursesController extends AppController
     public function edit($id = null)
     {
         $course = $this->Courses->get($id, [
-            'contain' => ['Users']
+            'contain' => ['Images']
         ]);
         
         if ($this->Auth->user('role') != 1 && $this->Auth->user('id') != $course->teacher_id) {
@@ -102,16 +109,27 @@ class CoursesController extends AppController
         }
 
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $course = $this->Courses->patchEntity($course, $this->request->data);
+            $data = $this->request->data;
+            $course = $this->Courses->patchEntity($course, $data);
+
+            if ($data['image']['size'] > 0 && $data['image']['error'] == 0) {
+                $filename = Text::uuid() . $data['image']['name'];
+                $filepath = 'course_images' . DS;
+                $course->image->filename = $filename;
+                $course->image->filepath = $filepath;
+                if (!move_uploaded_file($data['image']['tmp_name'], WWW_ROOT . 'img' . DS . $filepath . $filename)) {
+                    $this->Flash->error(__('The image could not be saved. Please, try again.'));
+                }
+            }
+
             if ($this->Courses->save($course)) {
                 $this->Flash->success(__('The course has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'view', $course->id]);
             }
             $this->Flash->error(__('The course could not be saved. Please, try again.'));
         }
-        $users = $this->Courses->Users->find('list', ['limit' => 200]);
-        $this->set(compact('course', 'users'));
+        $this->set(compact('course'));
         $this->set('_serialize', ['course']);
     }
     
@@ -142,8 +160,14 @@ class CoursesController extends AppController
 
    public function myCourses()
     {
+        if ($this->Auth->user('role') == 1 || $this->Auth->user('role') == 5) {
+            return $this->redirect(['action' => 'index']);
+        }
         $id = $this->Auth->user('id');
-        $courses = $this->paginate($this->Courses->find('WithUser', ['user_id' => $id]));
+        $courses = $this->Courses->find('WithUser', ['user_id' => $id])->contain(['Users', 'Images']);
+        foreach($courses as $course) {
+            $course->teacher = $this->Courses->Users->get($course->teacher_id);
+        }
 
         $this->set(compact('courses'));
         $this->set('_serialize', ['courses']);
@@ -159,10 +183,9 @@ class CoursesController extends AppController
     {
         $users = $this->paginate($this->Courses->Users->find('withCourse', ['course_id' => $course_id]));
         $course = $this->Courses->get($course_id);
-        $this->set('teacher_id', $course->teacher_id);
-        $this->set(compact('users')); 
-        $this->set(['course_id' => $course_id]);
-        $this->set('_serialize', ['users']);
+        
+        $this->set(compact('users', 'course')); 
+        $this->set('_serialize', ['users', 'course']);
     }
     
     public function addMember($course_id, $user_id = null)
@@ -200,12 +223,14 @@ class CoursesController extends AppController
     
     public function deleteMember($course_id, $user_id)
     {
-        if ($this->Auth->user('role') != 1) {
+        $this->request->allowMethod(['post', 'deleteMember']);
+
+        $course = $this->Courses->get($course_id);
+        if ($this->Auth->user('role') != 1 && $this->Auth->user('id') != $course->teacher_id) {
             $this->Flash->error(__('You are not allowed to delete members from courses.'));
             return $this->redirect(['action' => 'view', $course_id]);
         }
 
-        $this->request->allowMethod(['post', 'delete']);
         $relationship = $this->Courses->CoursesUsers->find('all')
             ->where(['user_id' => $user_id, 'course_id' => $course_id])->first();
         if ($this->Courses->CoursesUsers->delete($relationship)) {
@@ -219,23 +244,34 @@ class CoursesController extends AppController
 
     public function editTopics($course_id)
     {
-        $topics = $this->Courses->Topics->find('withCourse', ['course_id' => $course_id]);
-        $this->set(compact('topics')); 
-        $this->set(['course_id' => $course_id]);
-        $this->set('_serialize', ['topics']);
+        $topics = $this->Courses->Topics->find('withCourse', ['course_id' => $course_id])->contain(['Assignments', 'Attachments']);
+        $course = $this->Courses->get($course_id);
+        $this->set(compact('topics', 'course')); 
+        $this->set('_serialize', ['topics', 'course']);
     }
 
-    public function dashboard()
+    private function createForum($name)
     {
-        //You can use $this->Auth in every Controller. CakePHP supports login/out automatically.
-        $id = $this->Auth->user('id');
-        //I want to get my courses list. I created a function findWithUser($user_id) in Model/Table/CoursesTable.php
-        $courses = $this->paginate($this->Courses->find('WithUser', ['user_id' => $id]));
-        
-        //Fetch Informations. btw, $this->Users means the Users table. Informations table has User's id as the publisher, so we can say users table and informations table has relationship. So We can call $this->Users->Informatinos  find('all') calls Model file and fetch data from databases.
-        
-        //These two lines pass the contents of $courses to the view(Templete file)
-        $this->set(compact('courses'));
-        $this->set('_serialize', ['courses']);
+        $forum = $this->Courses->Forums->newEntity();
+        $forum->name = $name . 'Forum';
+        $forum->created = date("Y-m-d H:i:s");
+        $forum->modified = date("Y-m-d H:i:s");
+        if ($this->Courses->Forums->save($forum)) {
+            return $forum->id;
+        }
+        return 0;
     }
+
+    public function openEvaluation($course_id)
+    {
+        $course = $this->Courses->get($course_id);
+        $course->evaluation_opened = true;
+        if ($this->Courses->save($course)) {
+            $this->Flash->success(__('The evaluation forms are opened.'));
+        } else {
+            $this->Flash->error(__('Failed to open the evaluation forms.'));
+        }
+        return $this->redirect(['action' => 'view', $course_id]);
+    }
+
 }

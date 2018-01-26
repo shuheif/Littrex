@@ -1,0 +1,15 @@
+.action-bar {
+    padding: 0px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.action-bar:visisted {
+    font-weight: 1000px;
+    color: #000000;
+}
+
+.action-bar-before::after {
+    content: "/";
+    padding-left: 25px;
+}

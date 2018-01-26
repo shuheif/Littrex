@@ -2,6 +2,8 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Utility\Text;
+use Cake\ORM\TableRegistry;
 
 /**
  * Submissions Controller
@@ -10,22 +12,6 @@ use App\Controller\AppController;
  */
 class SubmissionsController extends AppController
 {
-
-    /**
-     * Index method
-     *
-     * @return \Cake\Network\Response|null
-     */
-    public function index()
-    {
-        $this->paginate = [
-            'contain' => ['Assignments', 'Users', 'Grades', 'Attachments']
-        ];
-        $submissions = $this->paginate($this->Submissions);
-
-        $this->set(compact('submissions'));
-        $this->set('_serialize', ['submissions']);
-    }
 
     /**
      * View method
@@ -37,12 +23,13 @@ class SubmissionsController extends AppController
     public function view($id = null)
     {
         $submission = $this->Submissions->get($id, [
-            'contain' => ['Assignments', 'Users', 'Grades', 'Attachments']
+            'contain' => ['Users', 'Results', 'Attachments']
             ]);
         $assignment = $this->Submissions->Assignments->get($submission->assignment_id);
+        $course = $this->Submissions->Assignments->Courses->get($assignment->course_id);
 
-        $this->set(compact('submission', 'assignment'));
-        $this->set('_serialize', ['submission', 'assignment']);
+        $this->set(compact('submission', 'assignment', 'course'));
+        $this->set('_serialize', ['submission', 'assignment', 'course']);
     }
 
     /**
@@ -54,32 +41,38 @@ class SubmissionsController extends AppController
     {
         $submission = $this->Submissions->newEntity();
         $assignment = $this->Submissions->Assignments->get($assignment_id);
+        $course = $this->Submissions->Assignments->Courses->get($assignment->course_id);
 
         if ($this->request->is('post')) {
             $data = $this->request->data;
+            if ($data['attachment']['size'] == 0) {
+                $data['attachment'] = null;
+            }
             $submission = $this->Submissions->patchEntity($submission, $this->request->data);
+            $submission->assignment_id = $assignment_id;
             $submission->submit_date = date("Y-m-d H:i:s");
 
             if ($data['attachment']['size'] > 0 && $data['attachment']['error'] == 0) {
                 $filename = Text::uuid() . $data['attachment']['name'];
-                $user->attachment->filename = $filename;
-                $user->attachment->filepath = 'user_attachments';
-                // WWW_ROOT /home/users/0/raindrop.jp-shuhei/web/shuhei_dev/webroot/
-                if (!move_uploaded_file($data['image']['tmp_name'], WWW_ROOT . 'attachments/user_attachments/' . $filename)) {
+                $filepath = 'attachments/user_attachments/';
+                $submission->attachment->filename = $filename;
+                $submission->attachment->filepath = $filepath;
+                $submission->attachment->title = $data['attachment']['name'];
+                if (!move_uploaded_file($data['attachment']['tmp_name'], WWW_ROOT . $filepath . $filename)) {
                     $this->Flash->error(__('The attchment file could not be saved. Please, try again.'));
-                } else {
-                    if ($this->Submissions->save($submission)) {
-                        $this->Flash->success(__('The submission has been saved.'));
-                
-                        return $this->redirect(['controller' => 'Assignments', 'action' => 'courseAssignments', $assignment->course_id]);
-                    }
-                    $this->Flash->error(__('The submission could not be saved. Please, try again.'));
                 }
             }
+            if ($this->Submissions->save($submission)) {
+                $this->createSubmissionNotification($submission);
+                $this->Flash->success(__('The submission has been saved.'));
+                
+                return $this->redirect(['controller' => 'Assignments', 'action' => 'courseAssignments', $assignment->course_id]);
+            }
+            $this->Flash->error(__('The submission could not be saved. Please, try again.'));
         }
 
-        $this->set(compact('submission', 'assignment'));
-        $this->set('_serialize', ['submission', 'assignment']);
+        $this->set(compact('submission', 'assignment', 'course'));
+        $this->set('_serialize', ['submission', 'assignment', 'course']);
     }
 
     /**
@@ -129,5 +122,28 @@ class SubmissionsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    private function createSubmissionNotification($submission)
+    {
+        $Notifications = TableRegistry::get('Notifications');
+        // Create notification and messages to all members.
+        $notification = $Notifications->newEntity();
+        $notification->type = 5;
+        $notification->variable1 = $submission->id;
+        $notification->date = date("Y-m-d H:i:s");
+        $notification->sender_id = $this->Auth->user('id');
+                
+        if ($Notifications->save($notification)) {
+            $Messages = TableRegistry::get('Messages');
+            $assignment = $this->Submissions->Assignments->get($submission->id);
+            $course = $this->Submissions->Assignments->Courses->get($assignment->course_id);
+            $teacher = $this->Submissions->Users->get($course->id);
+            $message = $Messages->newEntity();
+            $message->notification_id = $notification->id;
+            $message->receiver_id = $teacher->id; // Only the teacher gets the notification.
+            $message->isRead = 0;
+            $Messages->save($message);
+        }
     }
 }

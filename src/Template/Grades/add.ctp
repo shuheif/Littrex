@@ -3,29 +3,26 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Grades'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Assignments'), ['controller' => 'Assignments', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Assignment'), ['controller' => 'Assignments', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Courses Grades Users'), ['controller' => 'CoursesGradesUsers', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Courses Grades User'), ['controller' => 'CoursesGradesUsers', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Courses Users'), ['controller' => 'CoursesUsers', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Courses User'), ['controller' => 'CoursesUsers', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
+<section style="padding-top: 15px;">
+  <nav class="navbar navbar-default">
+          <h3 style="margin: 20px 0px 0px 25px">Add Grade - <?= h($course->department) . $this->Number->Format($course->number) . ' ' . h($course->title) ?></h3>
+        <div class="container-fluid action-bar" style="padding-left: 11px; padding-top:-5px;">
+            <ul class="nav navbar-nav action-bar">
+              <li><?= $this->Html->link(h($course->department) . $this->Number->Format($course->number) . ' ' . h($course->title), ['controller' => 'Courses', 'action' => 'view', $course->id], ['class' => 'action-bar-before']) ?> </li>
+              <li><?= $this->Html->link(__('Grades List'), ['controller' => 'Grades', 'action' => 'courseGrades', $course->id]) ?></li>
+            </ul>
+        </div><!--/.container-fluid -->
+      </nav>
+</section>
+
 <div class="grades form large-9 medium-8 columns content">
     <?= $this->Form->create($grade) ?>
     <fieldset>
-        <legend><?= __('Add Grade') ?></legend>
         <?php
-            echo $this->Form->input('grade');
             echo $this->Form->input('title');
             echo $this->Form->input('description');
-            echo $this->Form->input('date');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Save')) ?>
     <?= $this->Form->end() ?>
 </div>

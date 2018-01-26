@@ -38,10 +38,22 @@ class GradesTable extends Table
         $this->displayField('title');
         $this->primaryKey('id');
 
+        $this->belongsTo('Users', [
+            'foreignKey' => 'user_id',
+            'joinType' => 'INNER',
+            'propertyName' => 'user'
+        ]);
+
+        $this->belongsTo('Courses', [
+            'foreignKey' => 'course_id',
+            'joinType' => 'INNER',
+            'propertyName' => 'course'
+        ]);
+
         $this->hasMany('Assignments', [
             'foreignKey' => 'grade_id'
         ]);
-        $this->hasMany('CoursesGradesUsers', [
+        $this->hasMany('Results', [
             'foreignKey' => 'grade_id'
         ]);
         $this->hasMany('CoursesUsers', [
@@ -71,11 +83,15 @@ class GradesTable extends Table
         $validator
             ->allowEmpty('description');
 
-        $validator
-            ->dateTime('date')
-            ->requirePresence('date', 'create')
-            ->notEmpty('date');
-
         return $validator;
+    }
+
+    public function findWithCourse(Query $query, array $options)
+    {
+        $query = $this->find();
+        $query->matching('Courses', function ($q) use ($options) {
+            return $q->where(['Courses.id' => $options['course_id']]);
+        });
+        return $query;
     }
 }

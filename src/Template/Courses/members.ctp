@@ -3,53 +3,104 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('View Course'), ['action' => 'view', $course_id]) ?></li>
-        <?php if ($auth->user('role') == 1 || $auth->user('id') == $teacher_id): ?>
-        <li><?= $this->Html->link(__('Add member'), ['action' => 'addMember', $course_id]) ?></li>
-        <?php endif; ?>
-    </ul>
-</nav>
-<div class="users index large-9 medium-8 columns content">
-    <h3><?= __('Students List') ?></h3>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
-            <tr>
-                <th scope="col"><?= $this->Paginator->sort('email') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('first_name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('last_name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('middle_name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('role') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('image_id') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($users as $user): ?>
-            <tr>
-                <td><?= h($user->email) ?></td>
-                <td><?= h($user->first_name) ?></td>
-                <td><?= h($user->last_name) ?></td>
-                <td><?= h($user->middle_name) ?></td>
-                <td><?= $this->Users->get_role_name($user->role) ?></td>
-                <td><?= $user->has('image') ? $this->Html->image($user->image->image) : $this->Html->image('profile_image.png') ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
-    </div>
-</div>
+<section style="padding-top: 15px;">
+  <nav class="navbar navbar-default">
+          <h3 style="margin: 20px 0px 0px 25px">
+          Members - 
+          <?php
+                $title = h($course->department) . $this->Number->format($course->number) . " " . ($course->title);
+                echo $title;
+          ?></h3>
+        <div class="container-fluid action-bar" style="padding-left: 11px; padding-top:-5px;">
+            <ul class="nav navbar-nav action-bar">
+            <li><?= $this->Html->link(h($course->department . $course->number . ' ' . $course->title), ['action' => 'view', $course->id], ['class' => 'action-bar-before']) ?></li>
+            <?php if ($auth->user('role') == 1 || $auth->user('id') == $course->teacher_id): ?>
+            <li><?= $this->Html->link(__('Add member'), ['action' => 'addMember', $course->id], ['class' => 'action-bar-before']) ?></li>
+            <?php endif; ?>
+            </ul>
+        </div><!--/.container-fluid -->
+      </nav>
+</section>
+
+<!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th scope="col"><?= $this->Paginator->sort('first_name') ?></th>
+                    <th scope="col"><?= $this->Paginator->sort('last_name') ?></th>
+                    <th scope="col"><?= $this->Paginator->sort('middle_name') ?></th>
+                    <th scope="col"><?= $this->Paginator->sort('role') ?></th>
+                    <th scope="col"><?= $this->Paginator->sort('image_id') ?></th>
+                    <th scope="col" class="actions"><?= __('Actions') ?></th>
+                </tr>
+                </thead>
+                    <tbody>
+                    <?php foreach ($users as $user): ?>
+                    <tr>
+                        <td><?= h($user->first_name) ?></td>
+                        <td><?= h($user->last_name) ?></td>
+                        <td><?= h($user->middle_name) ?></td>
+                        <td><?= $this->Users->get_role_name($user->role) ?></td>
+                        <td><?= $this->Html->image($this->Users->get_profile_image($user), ['width' => '100px']) ?></td>
+                        <td class="actions">
+                            <li><?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?></li>
+                            <li><?= $this->Html->link(__('Attendances'), ['controller' => 'Attendances', 
+                                'action' => 'studentView', $course->id, $user->id]) ?></li>
+                            <li><?= $this->Html->link(__('Grades'), ['controller' => 'Results', 
+                                'action' => 'studentView', $course->id, $user->id]) ?></li>
+
+                            <?php if($auth->user('role') == 1): ?>
+                            <li><?= $this->Form->postLink(__('Delete from course'), ['controller' => 'Courses', 
+                                'action' => 'deleteMember', $course->id, $user->id], 
+                                ['confirm' => 'Are you sure you want to delete ' . $user->first_name . ' ' . $user->last_name . ' from the class?']) ?></li>
+                              <?php endif; ?>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+
+<?php
+$this->Html->css([
+    'AdminLTE./plugins/datatables/dataTables.bootstrap',
+  ],
+  ['block' => 'css']);
+
+$this->Html->script([
+  'AdminLTE./plugins/datatables/jquery.dataTables.min',
+  'AdminLTE./plugins/datatables/dataTables.bootstrap.min',
+],
+['block' => 'script']);
+?>
+
+<?php $this->start('scriptBotton'); ?>
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
+<?php $this->end(); ?>

@@ -226,15 +226,17 @@ if (Configure::read('debug')) {
 Plugin::load('AdminLTE', ['bootstrap' => true, 'routes' => true]);
 
 Configure::write('Theme', [
-    'title' => 'AdminLTE',
+    'title' => 'Littrex: Learning Management System',
     'logo' => [
-        'mini' => '<b>A</b>LT',
-        'large' => '<b>Admin</b>LTE'
+        'mini' => '<b>RCC</b>',
+        'large' => '<b>Royal College Curepipe</b>'
     ],
     'login' => [
         'show_remember' => true,
-        'show_register' => true,
-        'show_social' => true
+        'show_register' => false,
+        'show_social' => false
     ],
     'folder' => ROOT
 ]);
+
+Plugin::load('FullCalendar', ['autoload' => true, 'bootstrap' => false, 'routes' => true]);
