@@ -27,7 +27,7 @@
 
 <body class="login-page" style="">
 
-  <div class="col-md-6">
+  <div class="row">
     <a class="navbar-brand js-scroll-trigger" href="http://littrex.com">
       <img height=100 width=250 src="http://littrex.com/img/Littrex_Logo.png"><img>
     </a>
